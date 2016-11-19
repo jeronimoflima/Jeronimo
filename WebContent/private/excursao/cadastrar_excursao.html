@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cadastrar excursao</title>
+<meta charset="utf-8">
+<link href="/gotrip/resources/css/bootstrap.css" rel="stylesheet">
+<link href="/gotrip/resources/css/cadastros.css" rel="stylesheet">
+<!-- Chamadas JS -->
+<script src="/gotrip/resources/js/jquery-2.1.4.js"></script>
+<script src="/gotrip/resources/js/jquery-ui.js"></script>
+<script src="/gotrip/resources/js/ajax.js"></script>
+<script src="/gotrip/resources/js/bootstrap.js"></script>
+<script src="/gotrip/resources/js/bootbox.js"></script>
+<script src="/gotrip/resources/js/jquery.mask.min.js"></script>
+<script src="/gotrip/resources/js/arquivo.js"></script>
+<script src="/gotrip/resources/js/validacampos.js"></script>
+<script src="/gotrip/private/excursao/js/excursaoRest.js"></script>
+<script src="/gotrip/private/excursao/js/excursao.js"></script>
+<script src="/gotrip/private/excursao/js/upload.js"></script>
+
+
+
+</head>
+<body>
+<form id="frm">
+	<div id="cadastrarExcursao" class="container fluid col-sm-12">
+		<div class="container fluid col-sm-12 cabeca">
+			<div class="col-sm-6">
+				<img alt="Brand" class="logo"
+					src="/gotrip/resources/imagem/logo_gotrip.png">
+			</div>
+			<div class="col-sm-6">
+				<h1 id="titulo">Cadastro de Excursão</h1>
+			</div>
+		</div>
+
+		<div class="container col-sm-12 corpo">
+			<div class="row">
+				<div class="form-group col-md-5">
+					<label for="campo1">Título da Excursão</label> <input type="text"
+						class="form-control" id="nome" name="nome">
+				</div>
+				<div class="form-group col-md-3">
+					<div class="form-group">
+						<label for="sel1">Categoria</label> <select
+							class="form-control" id="categoria" name="categoria">
+							<option>Festas</option>
+							<option>Shows</option>
+							<option>Parques Temáticos</option>
+							<option>Esportes</option>
+							<option>Religioso</option>
+							<option>Compras</option>
+							<option>Seminários/Palestras</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			<div class="form-group col-md-2">
+					<label for="campo2">Cidade</label> <input type="text"
+						class="form-control" id="cidade" name="cidade">
+				</div>
+				<div class="form-group col-md-1">
+					<div class="form-group">
+						<label for="sel2">Estado</label> <select
+							class="form-control" id="estado">
+							<option>AC</option>
+							<option>AL</option>
+							<option>AP</option>
+							<option>AM</option>
+							<option>BA</option>
+							<option>CE</option>
+							<option>DF</option>
+							<option>ES</option>
+							<option>DF</option>
+							<option>GO</option>
+							<option>MA</option>
+							<option>MT</option>
+							<option>MS</option>
+							<option>MG</option>
+							<option>PA</option>
+							<option>PB</option>
+							<option>PR</option>
+							<option>PE</option>
+							<option>PI</option>
+							<option>RJ</option>
+							<option>RN</option>
+							<option>RO</option>
+							<option>RR</option>
+							<option>SC</option>
+							<option>SP</option>
+							<option>SE</option>
+							<option>TO</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="campo3">Local de Saída</label> <input type="text"
+						class="form-control" id="local" name="local">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="campo4">Data de Saída</label> <input id="data"
+						name="data" type="date" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+			<div class="form-group col-md-2">
+					<label for="campo5">Total Participantes</label> <input type="text"
+						class="form-control" id="totalparti" name="totalparti">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="campo6">Mínimo Participantes</label> <input type="text"
+						class="form-control" id="minimoparti" name="minimoparti">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="campo7">Valor</label> <input type="text"
+						class="form-control" id="valor" name="valor">
+				</div>
+				<div class="form-group col-md-2">
+					<div class="form-group">
+						<label for="sel3">Status</label> <select
+							class="form-control" id="status" name="status">
+							<option>Inativo</option>
+							<option>Ativo</option>
+							<option>Garantido</option>
+						</select>
+					</div>
+				</div>
+								
+			</div>
+			<div class="row">
+				<div class="form-group col-md-8">
+					<div class="form-group">
+						<label for="comment">Descrição</label>
+						<textarea class="form-control" rows="5" id="descricao" name="descricao"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<div class="form-group">
+						<label class="control-label">Imagem01</label> 
+						<input id="imagem1"
+							name="nome" type="file" class="file" data-show-preview="false">
+					</div>
+				</div>
+				<div class="form-group col-md-4">
+					<div class="form-group">
+						<label class="control-label">Imagem02</label> 
+						<input id="imagem2"
+							name="nome" type="file" class="file" data-show-preview="false">
+					</div>
+				</div>
+			</div>
+			<input id="foto1" name="foto1" type="hidden"
+					class="form-control">
+			<input id="foto2" name="foto2" type="hidden"
+					class="form-control">
+			<div>
+				<input id="id_excursao" name="id_excursao" type="hidden" class="form-control">
+			</div>
+			<div>
+				<input id="id_cidade" name="id_cidade" type="hidden"
+					class="form-control">
+			</div>
+			<div>
+				<input id="id_usuario" name="id_usuario" type="hidden"
+					class="form-control">
+			</div>
+			<div>
+				<input id="id_participante" name="id_participante" type="hidden"
+					class="form-control">
+			</div>
+			<div>
+				<input id="consultarExcursao" name="consultarExcursao" type="hidden"
+					class="form-control">
+			</div>
+			<div>
+				<input id="id_participante" name="id_participante" type="hidden"
+					class="form-control">
+			</div>
+			<div class="botoes">
+				<a onclick="GOTRIP.excursao.cadastrar()" id="bt1"
+					class="btn btn-success">Cadastrar</a> 
+					<a href="/gotrip/private/usuario/gestao_organizador.html"
+					id="bt2" class="btn btn-default">Sair</a>
+			</div>
+		</div>
+	</div>
+	</form>
+</body>
+</html>

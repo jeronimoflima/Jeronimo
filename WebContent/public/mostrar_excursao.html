@@ -1,0 +1,83 @@
+    <!html>
+    <head>
+      <title>mostrar excursão</title>
+      <meta charset="utf-8">
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="css/lista.css" rel="stylesheet">
+      <!--link href="css/navbar.css" rel="stylesheet"-->
+      <link href="calendar/css/datepicker.css" rel="stylesheet">
+      <!-- Chamadas JS -->
+      <script src="js/jquery-2.1.4.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <script src="js/arquivo.js"></script> 
+      <script src="calendar/js/bootstrap-datepicker.js"></script>
+    </head>
+
+    <body>
+      <div id="main" class="container-fluid">
+       <div  class="container fluid col-sm-12 cabeca">
+        <div class="col-sm-6">
+          <img alt="Brand" class="logo" src="logo_gotrip.png">
+        </div>
+        <div class="col-sm-6">
+          <h1 id="titulo">Festa do Pinhão</h1>
+        </div>
+      </div> <!-- /#top -->
+
+      <div id="top" class="row">
+        <div class="col-md-4">
+          <div id="navbar" class="navbar-collapse collapse">
+            <p class="informa" >Organizador: Rafael Souza </p>
+            <p class="informa" >Preço: R$260,00 </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="navbar" class="navbar-collapse collapse">
+            <p class="informa" >Local de Saída: Joinville </p>
+            <p class="informa" >Data de Partida: 12/06/2016 </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- Button trigger modal -->
+          <button data-toggle="popover" title="Organizador: Rafael Souza" data-html="true" data-placement="left" data-content="
+                          Telefone: 47-3244-6543<br>
+                          Email: rafaelsouza@terra.com.br<br>
+                          ***Aceitamos Cartão de Crédito***
+                        "Toggle popover style="margin-top: 15px; margin-left: 63%;">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Contato
+          </button>
+        </div>
+        <script>
+          $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();   
+          });
+        </script>
+      </div>
+
+      <div class="row-fluid" style="margin-top: 45px;">
+       <p> A cidade de Lages vive a expectativa para o início da 28ª Festa Nacional do Pinhão, que ocorre de 20 a 29 de maio. Falta pouco mais de 20 dias e até mesmo o clima entrou em ritmo de festa e começou a mudar. De mansinho, o inverno chega na Serra Catarinense para a alegria dos turistas que aproveitam para se divertir no evento que carrega o charme da estação mais fria do ano. Cerca de 80 atrações nacionais, regionais e locais vão animar o público durante os 10 dias de festa.</p></br>
+       <p> Para começar, na sexta-feira, dia 20 de maio, quatro atrações de estilos musicais bem diferentes sobem ao palco Nacional para agitar a galera. O funk melodi de Naldo Beni, o sertanejo universitário de Bruno e Barreto e o pagode do grupo Só Pra Contrariar, considerado um dos mais importantes nomes da Música Popular Brasileira (MPB). Quem também se apresenta no primeiro dia de festa é a banda PaQua. A mistura de samba, pagode, rock, house e pop fez com que a crítica considerasse a banda mineira um dos grupos musicais mais promissores da atualidade.</p>  
+     </div>
+     <div class="row-fluid">
+      <div class="col-md-4">
+        <img class="img" src="festa_folder.jpg">
+      </div>   
+      <div class="col-md-4">
+        <img class="img" src="festa_mapa.jpg">
+      </div>
+      <div class="col-md-4">
+        <img class="img" src="festa.jpg">
+      </div> 
+    </div>
+    
+    <div id="list" class="row">
+
+
+
+    </div> <!-- /#list -->
+   </div>  <!-- /#main -->
+
+
+
+</body>
+</html>

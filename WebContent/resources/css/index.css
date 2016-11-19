@@ -1,0 +1,85 @@
+.navega{
+	background-color: #181818;
+	
+}
+
+
+.botao{
+	margin-left: 200px;
+	
+	
+}
+
+.botao1{
+	margin-left: 780px;
+}
+
+.logo{
+
+	margin-top: 10%;
+	margin-left: 30%;
+	padding: 0;
+	width: 220px;    
+	height: auto;  	
+}
+
+.login{
+	background: white;
+
+
+}
+
+
+/***campo de busca***/
+.container{
+    margin-top:4px; 
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+    border-color:#FF3300;
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#FF6600;
+
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.amostra{
+	margin-top:30px; 
+	margin-left: 0%;
+
+}
+.amostra a{
+	font-size: 16px;
+	color: #FF6600;
+}
+#amostra1{
+	margin-top:30px; 
+	margin-left: 452px;
+
+}
+#amostra2{
+	margin-top:30px; 
+	margin-left: 75px;
+
+}
+h3.popover-title{
+	    background-color: black;
+    color: antiquewhite;
+}
+
+.popover-content {
+    padding: 9px 25px;
+    color:#FF6600;
+}
+
+#principal{
+	margin-bottom: 70px;
+}
+
+

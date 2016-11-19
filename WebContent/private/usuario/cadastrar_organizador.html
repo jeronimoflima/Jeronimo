@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>cadastrar organizador</title>
+<meta charset="utf-8">
+<link href="/gotrip/resources/css/bootstrap.css" rel="stylesheet">
+<link href="/gotrip/resources/css/cadastros.css" rel="stylesheet">
+<!-- Chamadas JS -->
+<script src="/gotrip/resources/js/jquery-2.1.4.js"></script>
+<script src="/gotrip/resources/js/ajax.js"></script>
+<script src="/gotrip/resources/js/bootstrap.js"></script>
+<script src="/gotrip/resources/js/bootbox.js"></script>
+<script src="/gotrip/resources/js/jquery.mask.min.js"></script>
+<script src="/gotrip/resources/js/arquivo.js"></script>
+<script src="/gotrip/private/usuario/js/usuarioRest.js"></script>
+<script src="/gotrip/private/usuario/js/organizador.js"></script>
+<script src="/gotrip/resources/js/validacampos.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+	<div id="cadastrar_organizador" class="container fluid col-sm-12">
+		<div class="container fluid col-sm-12 cabeca">
+			<div class="col-sm-6">
+				<img alt="Brand" class="logo" src="/gotrip/resources/imagem/logo_gotrip.png">
+			</div>
+			<div class="col-sm-6">
+				<h1 id="titulo">Cadastro de Organizador</h1>
+			</div>
+		</div>
+<form name="input" id="LoginServlet" action="LoginServlet" method="post">
+		<div class="container col-sm-12 corpo">
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="campo1">Nome Completo</label> <input type="text"
+						class="form-control" id="nome" name="nome" readonly="readonly">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="campo2">Data de Nascimento</label> <input id="data"
+						name="data" type="date" class="form-control">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="campo3">CPF</label> <input type="text"
+						class="form-control" id="cpf" name="cpf">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="campo2">E-mail</label> <input type="text"
+						class="form-control" id="email" name="email">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="campo5">Telefone</label> <input type="text"
+						class="form-control" id="telefone" name="telefone">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="campo6">CEP</label> <input type="text"
+						class="form-control" id="cep" name="cep">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="campo7">Endereço</label> <input type="text"
+						class="form-control" id="endereco" name="endereco">
+				</div>
+				<div class="form-group col-md-1">
+					<label for="campo8">Nº</label> <input type="text"
+						class="form-control" id="numero" name="numero">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="campo9">Complemento</label> <input type="text"
+						class="form-control" id="complemento" name="complemento">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="campo10">Bairro</label> <input type="text"
+						class="form-control" id="bairro" name="bairro">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="campo11">Cidade</label> <input type="text"
+						class="form-control" id="cidade" name="cidade">
+				</div>
+				<div class="form-group col-md-1">
+					<div class="form-group">
+						<label for="sel1">Estado</label> <select class="form-control"
+							id="estado">
+							<option>AC</option>
+							<option>AL</option>
+							<option>AP</option>
+							<option>AM</option>
+							<option>BA</option>
+							<option>CE</option>
+							<option>DF</option>
+							<option>ES</option>
+							<option>DF</option>
+							<option>GO</option>
+							<option>MA</option>
+							<option>MT</option>
+							<option>MS</option>
+							<option>MG</option>
+							<option>PA</option>
+							<option>PB</option>
+							<option>PR</option>
+							<option>PE</option>
+							<option>PI</option>
+							<option>RJ</option>
+							<option>RN</option>
+							<option>RO</option>
+							<option>RR</option>
+							<option>SC</option>
+							<option>SP</option>
+							<option>SE</option>
+							<option>TO</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="campo4">Senha</label> <input type="password"
+						class="form-control" id="senha" name="senha">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="campo5">Confirma Senha</label> <input type="password"
+						class="form-control" id="confirmasenha" name="confirmasenha">
+				</div>
+			</div>
+			<div>
+				<input id="id" name="id" type="hidden" class="form-control">
+			</div>
+			<div>
+				<input id="id_endereco" name="id_endereco" type="hidden"
+					class="form-control">
+			</div>
+			<div>
+				<input id="id_cidade" name="id_cidade" type="hidden"
+					class="form-control">
+			</div>
+			<div class="checkbox" id="term">
+				<label> <input type="checkbox" id="termo" name="termo">Estou de acordo com o
+					<a href="#"><b>Termo de Uso</b></a>
+				</label>
+			</div>
+
+			<div class="botoes">
+				<a onclick="GOTRIP.organizador.cadastrar()" id="bt1"
+					class="btn btn-success">Cadastrar</a> 
+					<a href="#" onclick="carregar('/gotrip/private/usuario/lista_organizadores.html')"
+					id="bt2" class="btn btn-default">Sair</a>
+			</div>
+		</div>
+		</form>
+	</div>
+</body>
+</html>

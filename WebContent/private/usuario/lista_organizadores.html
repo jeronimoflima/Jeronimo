@@ -1,0 +1,70 @@
+    <!html>
+    <head>
+        <title>lista de organizadores</title>
+        <meta charset="utf-8">
+        <link href="/gotrip/resources/css/bootstrap.css" rel="stylesheet">
+		<link href="/gotrip/resources/css/cadastros.css" rel="stylesheet">
+		<link href="resources/css/lista.css" rel="stylesheet">
+        <!-- Chamadas JS -->
+        <script src="/gotrip/resources/js/jquery-2.1.4.js"></script>
+		<script src="/gotrip/resources/js/jquery-ui.js"></script>
+		<script src="/gotrip/resources/js/ajax.js"></script>
+		<script src="/gotrip/resources/js/bootstrap.js"></script>
+		<script src="/gotrip/resources/js/bootbox.js"></script>
+		<script src="/gotrip/resources/js/jquery.mask.min.js"></script>
+		<script src="/gotrip/resources/js/arquivo.js"></script>
+		<script src="/gotrip/private/usuario/js/usuarioRest.js"></script>
+		<script src="/gotrip/private/usuario/js/organizador.js"></script>
+    </head>
+
+    <body>
+        <div id="main" class="container-fluid">
+           <div  class="container fluid col-sm-12 cabeca">
+            <div class="col-sm-6">
+                <img alt="Brand" class="logo" src="/gotrip/resources/imagem/logo_gotrip.png">
+            </div>
+            <div class="col-sm-6">
+                <h1 id="titulo">Relação de Organizadores</h1>
+            </div>
+        </div> <!-- /#top -->
+        
+        <div class="row-fluid col-sm-6">
+		          <div id="imaginary_container"> 
+		            <div class="input-group stylish-input-group" style="width: 280;margin-left: 331px;">
+		              <input type="text" id="consultarOrganizador" class="form-control"  placeholder="Buscar Organizador" >
+		              <span class="input-group-addon">
+		                <button id="go_busca" type="submit" onClick="GOTRIP.organizador.buscar()">
+		                  <span class="glyphicon glyphicon-search"></span>
+		                </button>  
+		              </span>
+		            </div>
+		          </div>
+		        </div>
+
+        
+           <div id="list" class="row">
+
+            <div class="table-responsive col-md-12 lista">
+                <table class="table table-striped" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th>Cod</th>
+                            <th> Nome do Organizador</th>
+                            <th>CPF</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th class="actions">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="content">
+                    </tbody>
+                </table>
+            </div>
+            
+        </div> <!-- /#list -->
+    </div>  <!-- /#main -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+
+<html>
+<head>
+<title>gestão administrador</title>
+<meta charset="utf-8">
+<link href="/gotrip/resources/css/bootstrap.css" rel="stylesheet">
+<link href="/gotrip/resources/css/cadastros.css" rel="stylesheet">
+<link href="/gotrip/resources/css/lista.css" rel="stylesheet">
+<!-- Chamadas JS -->
+<script src="/gotrip/resources/js/jquery-2.1.4.js"></script>
+<script src="/gotrip/resources/js/jquery-ui.js"></script>
+<script src="/gotrip/resources/js/ajax.js"></script>
+<script src="/gotrip/resources/js/bootstrap.js"></script>
+<script src="/gotrip/resources/js/bootbox.js"></script>
+<script src="/gotrip/resources/js/jquery.mask.min.js"></script>
+<script src="/gotrip/resources/js/arquivo.js"></script>
+<script src="/gotrip/private/usuario/js/usuarioRest.js"></script>
+<script src="/gotrip/private/usuario/js/administrador.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-inverse">
+		<div class="container-fluid col-sm-12">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/gotrip/index.html">GoTRip</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a id="add_administrador" class="opcoes" href="#"
+						onclick="carregar('/gotrip/private/usuario/cadastrar_administrador.html')">Add
+							Administrador <span class="glyphicon glyphicon-plus"
+							aria-hidden="true"></span>
+					</a></li>
+					<li><a class="opcoes" href="#" onclick="carregar('/gotrip/private/usuario/lista_organizadores.html')">Organizadores <span
+							class="glyphicon glyphicon-user" aria-hidden="true" ></span>
+					</a></li>
+					<li id="gerar"><a type="button" class="opcoes" href="#"
+						data-toggle="modal" data-target="#myModal">Relatório Geral <span
+							class="glyphicon glyphicon-file" aria-hidden="true"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="principal" class="container-fluid">
+		<div id="main" class="container-fluid">
+			<div class="container fluid col-sm-12 cabeca">
+				<div class="col-sm-6">
+					<img alt="Brand" class="logo"
+						src="/gotrip/resources/imagem/logo_gotrip.png">
+				</div>
+				<div class="col-sm-6">
+					<h1 id="titulo">Gerenciamento Administrador</h1>
+				</div>
+			</div>
+			<!-- /#top -->
+
+			<!--div id="top" class="row">
+				<div class="col-md-12">
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a class="opcoes" href="#">Administradores <span
+									class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
+							<li><a id="add_administrador" class="opcoes" href="#"
+								onclick="carregar('/gotrip/private/usuario/cadastrar_administrador.html')">Add
+									Administrador <span class="glyphicon glyphicon-plus"
+									aria-hidden="true"></span>
+							</a></li>
+							<li id="organizadores"><a class="opcoes" href="#">Organizadores
+									<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+							</a></li>
+							<li id="gerar"><a type="button" class="opcoes" href="#"
+								data-toggle="modal" data-target="#myModal">Relatório Geral <span
+									class="glyphicon glyphicon-file" aria-hidden="true"></span></a></li>
+						</ul>
+					</div>
+
+				</div -->
+
+
+
+
+			<div id="list" class="row">
+
+				<div class="table-responsive col-md-12 lista">
+					<table class="table table-striped" cellspacing="0" cellpadding="0">
+						<thead>
+							<tr>
+								<th>Matrícula</th>
+								<th>Administradores</th>
+								<th>CPF</th>
+								<th>E-mail</th>
+								<th>Telefone</th>
+								<th class="actions">Ações</th>
+							</tr>
+						</thead>
+						<tbody id="content">
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<!-- /#list -->
+
+			<div id="bottom" class="row"></div>
+			<!-- /#bottom -->
+		</div>
+		<!-- /#main -->
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid col-sm-12">
+			<footer>
+				<div class="navbar navbar-inverse navbar-fixed-bottom">
+					<div class="navbar-collapse collapse" id="footer-body">
+						<ul class="nav navbar-nav">
+							<li><a id="quem" href="#">Que Somos</a></li>
+							<li><a id="termos" href="#">Termos</a></li>
+							<li><a href="#" data-toggle="popover" title="GoTRip"
+								data-html="true" data-placement="top"
+								data-content="
+                      jeronimoflima@yahoo.com.br<br>
+                      Rua Videira, 111<br>
+                      Joinville - SC.<br>
+                      47-3278-1497
+                      ">Contato</a></li>
+						</ul>
+					</div>
+				</div>
+				<script>
+					$(document).ready(function() {
+						$('[data-toggle="popover"]').popover();
+					});
+				</script>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

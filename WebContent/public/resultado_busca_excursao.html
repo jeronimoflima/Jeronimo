@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>mostrar excursão</title>
+<meta charset="utf-8">
+ 
+     
+</head>
+
+<body>
+	<div id="main" class="container-fluid">
+		<div class="container fluid col-sm-12 cabeca">
+			<div class="col-sm-6">
+				<img alt="Brand" class="logo" src="/gotrip/resources/imagem/logo_gotrip.png">
+			</div>
+			<div class="col-sm-6">
+				<h1 id="nome"></h1>
+			</div>
+		</div>
+		<!-- /#top -->
+
+		<div id="top" class="row">
+			<div class="col-md-4">
+				<div id="navbar" class="navbar-collapse collapse">
+					<p class="informa" id="categoria"></p>
+					<p class="informa" id="valor"></p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div id="navbar" class="navbar-collapse collapse">
+					<p class="informa" id="local"></p>
+					<p class="informa" id="data"></p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div id="navbar" class="navbar-collapse collapse">
+					<p class="informa" id="nome_usuario"></p>
+					<p class="informa" id="fone_usuario"></p>
+					<p class="informa" id="email_usuario"></p>
+				</div>
+				<input id="id_usuario" type="hidden"
+					class="form-control">
+			</div>
+			
+			<script>
+				$(document).ready(function() {
+					$('[data-toggle="popover"]').popover();
+				});
+			</script>
+		</div>
+
+		<div class="row-fluid" style="margin-top: 45px;">
+			<p id= "descricao" ></p>
+			<p></p>
+		</div>
+		<div class="row-fluid">
+			<div id="img1" class="col-md-4">
+			</div>
+			<div id="img2" class="col-md-4">
+			</div>
+			
+		</div>
+
+		<div id="list" class="row"></div>
+		<!-- /#list -->
+	</div>
+	<!-- /#main -->
+
+
+
+</body>
+</html>

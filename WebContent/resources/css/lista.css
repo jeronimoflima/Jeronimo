@@ -1,0 +1,96 @@
+.logo{
+
+	margin-top: 3%;
+	margin-left: 5%;
+	padding: 0;
+	width: 160px;    
+	height: auto;  	
+}
+.cabeca{
+	border-color: #999999;
+	border-bottom-width: 5px;
+	border-top-width: 0;
+	border-right-width: 0;
+	border-left-width: 0;
+	border-style: solid;
+}
+h1{
+	font-size: 28px;
+	font-family: verdana;
+	color: #666666;
+	margin-left: 20%;
+	
+	}
+
+#bt2{
+
+	margin-left: 80%;
+	margin-top: 3%;
+}
+#bt1{
+
+	margin-left: 0%;
+	margin-top: 3%;
+}
+
+
+/***campo de busca***/
+.busca{
+    margin-top:20px; 
+    margin-left: 1%;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+    border-color:#808080;
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#808080;
+
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.opcoes{
+	font-size: 18px;
+	font-family: verdana;
+	color: #FF6600;
+}
+.lista{
+	margin-top:40px; 
+
+}
+.informa{
+	font-size: 18px;
+	font-family: verdana;
+	color: #999999;
+}
+
+.tela{
+	margin-left: 25%;
+}
+
+p{
+	font-size: 16px;
+	font-family: verdana;
+	color: #999999;
+}
+.img{
+	margin-top:50px; 
+	width: 335px;    
+	height: auto; 
+}
+.modal-header{
+	background-color: #FF6600;
+	}
+
+h4{
+	color: #FFFFFF;
+
+}
+.form-control{
+	width: 70%;
+	margin-left: calc;
+}

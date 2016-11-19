@@ -1,0 +1,59 @@
+
+.logo{
+
+	margin-top: 3%;
+	margin-left: 5%;
+	padding: 0;
+	width: 160px;    
+	height: auto;  	
+}
+.cabeca{
+	border-color: #999999;
+	border-bottom-width: 5px;
+	border-top-width: 0;
+	border-right-width: 0;
+	border-left-width: 0;
+	border-style: solid;
+}
+
+#bt2{
+
+	margin-left: 1%;
+	margin-top: 3%;
+}
+#bt1{
+
+	margin-top: 3%;
+}
+
+#titulo{
+	margin-left: -45%;
+	margin-top: 2%;
+
+}
+h1{
+	font-size: 28px;
+	font-family: verdana;
+	color: #666666;
+	margin-left: 20%;
+	
+	}
+.corpo{
+	margin-top: 3%;
+
+}
+#calculadora{
+	    margin-top: 24px;
+}
+.modal-body{
+	background-color: ;
+	
+}
+.modal-header{
+	background-color: #FF6600;
+
+}
+h4{
+	color: #FFFFFF;
+
+}
