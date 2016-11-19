@@ -236,12 +236,10 @@ GOTRIP.participante = new Object();
 					  });
 
 					};
-					GOTRIP.participante.exibirParticipantes(null, "", window.idExcursao);
-					
-
 					//GOTRIP.participante.exibirParticipantes(undefined, "",$("#id_excursao").val());
 					
 				});
+
 
 
 GOTRIP.participante.limpar = function() {

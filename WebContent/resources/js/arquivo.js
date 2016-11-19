@@ -7,7 +7,6 @@ function carregar(caminho,container){
 		$(container||"#principal").load(caminho, function(){
 			$("#id_excursao").val(id);
 		});
-		window.id = id;
 	}
 }
 function carregar1(caminho,container){

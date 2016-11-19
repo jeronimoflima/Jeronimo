@@ -1,6 +1,8 @@
 //Criando o objeto genérico SENAI
 GOTRIP = new Object();
 
+GOTRIP.idExcursao = 0;
+
 //Criando o sub-objeto ajax do objeto SENAI.
 GOTRIP.ajax = new Object();
 

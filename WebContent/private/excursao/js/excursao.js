@@ -242,7 +242,7 @@ $('input[type=file]').change(function(){
 					
 					
 				GOTRIP.excursao.passarId = function(id) {
-						window.idExcursao = id;
+						GOTRIP.idExcursao = id;
 						GOTRIP.excursaoRest.buscarExcursaoIdParticipanteNome({
 							data :{'valor1' : "", 'valor2' : id },
 							success : function(listaDeParticipantes) {
