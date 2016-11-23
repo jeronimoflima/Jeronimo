@@ -91,7 +91,7 @@ $('input[type=file]').change(function(){
 										+ "<a class='btn btn-danger' onclick='GOTRIP.excursao.deletarExcursao("
 										+ listaDeExcursoes[i].id
 										+ ")' ><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>" 
-										+ "<a class='btn btn-warning' onclick='GOTRIP.excursao.passarId("
+										+ "<a id='lista' class='btn btn-warning' onclick='GOTRIP.excursao.passarId("
 										+ listaDeExcursoes[i].id
 										+ ")' ><span class='glyphicon glyphicon-user' aria-hidden='true'></span></a>" 
 										+ "<a id='resultado' class='btn btn-default' onclick='GOTRIP.excursao.exibirResultado("
@@ -242,6 +242,8 @@ $('input[type=file]').change(function(){
 					
 					
 				GOTRIP.excursao.passarId = function(id) {
+					
+				
 						GOTRIP.idExcursao = id;
 						GOTRIP.excursaoRest.buscarExcursaoIdParticipanteNome({
 							data :{'valor1' : "", 'valor2' : id },
@@ -249,6 +251,7 @@ $('input[type=file]').change(function(){
 							$("body").load('/gotrip/private/participante/lista_participantes.html',function(){
 									$("#id_excursao").val(id);
 									GOTRIP.participante.exibirParticipantes(listaDeParticipantes, "", id);
+									GOTRIP.excursao.exibirDadosParti(id);
 								});
 							},
 							error : function(err) {
@@ -258,14 +261,42 @@ $('input[type=file]').change(function(){
 
 					};
 					
+					
+					GOTRIP.excursao.exibirDadosParti = function(id) {
+						
+						
+											GOTRIP.excursaoRest.buscarExcursaoPeloId({
+												data : id,
+												success : function(excur) {
+																								
+													var o = excur.usuario.nome;
+													$("#nome_usuario").html("Organizador: " + o);
+													var d = GOTRIP.dataFormatada(excur.data);
+													$("#data").html("Data de Partida: " + d);
+													var email = excur.usuario.email;
+													$("#email_usuario").html("Contato: " + email);
+													$("#fone_usuario").html(excur.usuario.telefone);
+													
+												},
+												
+												error : function(err) {
+													bootbox.alert("Erro ao exibir excursão: " + err.responseText);
+												}
+										  });
+											
+
+										}; 					
+					
+					
 GOTRIP.excursao.exibirResultado = function(id) {
 	
-	$("#principal").load('/gotrip/public/resultado_busca_excursao.html');
+	//$("#principal").load('/gotrip/public/resultado_busca_excursao.html');
 						
 						GOTRIP.excursaoRest.buscarExcursaoPeloId({
 							data : id,
 							success : function(excur) {
 								$("#nome").html(excur.nome);
+								debugger;
 								
 								var c = excur.categoria;
 								$("#categoria").html("Categoria: " + c);
@@ -283,26 +314,27 @@ GOTRIP.excursao.exibirResultado = function(id) {
 								
 								var v = excur.valor;
 								$("#valor").html("Valor por Pessoa: R$" + v);
-								$("#status").html(excur.status);
+								$("#status").html("Status :" +excur.status);
 								$("#descricao").html(excur.descricao);
 								
 								
 								$("#img1").html("");
-								$("<img height ='300' width ='400' >").attr("src","/gotrip/rest/download?file="+excur.imagem1).appendTo("#img1")
+								$("<img height ='270' width ='350' >").attr("src","/gotrip/rest/download?file="+excur.imagem1).appendTo("#img1")
 								
 								
 								$("#img2").html("");
-								$("<img height ='300' width ='400' >").attr("src","/gotrip/rest/download?file="+excur.imagem2).appendTo("#img2")
+								$("<img height ='270' width ='350' >").attr("src","/gotrip/rest/download?file="+excur.imagem2).appendTo("#img2")
 								
 								
 								$("#id_excursao").html(excur.id);
 								$("#id_cidade").html(excur.cidade.id);
 								$("#id_usuario").html(excur.usuario.id);
-								$("#nome_usuario").html(excur.usuario.nome);
+								
+								var o = excur.usuario.nome;
+								$("#nome_usuario").html("Organizador: " + o);
+								var email = excur.usuario.email;
+								$("#email_usuario").html("Contato: " + email);
 								$("#fone_usuario").html(excur.usuario.telefone);
-								$("#email_usuario").html(excur.usuario.email);
-								
-								
 								
 
 							},
@@ -312,7 +344,7 @@ GOTRIP.excursao.exibirResultado = function(id) {
 							}
 					  });
 
-						//$("#principal").load('/gotrip/public/resultado_busca_excursao.html');
+						$("#principal").load('/gotrip/public/resultado_busca_excursao.html');
 						
 												
 

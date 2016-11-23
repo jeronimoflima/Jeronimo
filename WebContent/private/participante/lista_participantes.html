@@ -10,10 +10,12 @@
 <script src="/gotrip/private/excursao/js/excursaoRest.js"></script>
 <script src="/gotrip/private/participante/js/participanteRest.js"></script>
 <script src="/gotrip/private/participante/js/participante.js"></script>
+<script src="/gotrip/resources/js/exportExcel.js"></script>
+
 
 </head>
 
-<body>
+<body style = "background: white;">
 <nav class="navbar navbar-default navbar-inverse">
 	<div class="container-fluid col-sm-12">
 		<div class="navbar-header">
@@ -31,7 +33,7 @@
 					onclick="carregar('/gotrip/private/participante/cadastrar_participantes.html','body');">Novo
 						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 				</a></li>
-				<li id="gerar"><a type="button" class="opcoes" href="#"
+				<li id="btnExport"><a type="button" class="opcoes" href="#"
 					data-toggle="modal" data-target="#myModal">Relatório de Viagem
 						<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
 				</a></li>
@@ -39,7 +41,8 @@
 		</div>
 	</div>
 </nav>
-	<div id="principal" class="container-fluid">
+
+	<div id="principal" class="container-fluid" style = "background: white;">
 		<div id="main" class="container-fluid">
 			<div class="container fluid col-sm-12 cabeca">
 				<div class="col-sm-6">
@@ -55,13 +58,12 @@
 				<div id="top" class="row">
 					<div class="col-md-6">
 						<div id="navbar" class="navbar-collapse collapse">
-							<p class="informa">Organizador: Rafael Souza</p>
-							<p class="informa">Data de Partida: 12/06/2016</p>
-
+							<p class="informa" id="nome_usuario"></p>
+							<p class="informa" id="data"></p>
 						</div>
 					</div>
 
-					<div class="row-fluid col-sm-6">
+					<div id ="busca" class="row-fluid col-sm-6">
 						<div id="imaginary_container">
 							<div class="input-group stylish-input-group"
 								style="width: 280; margin-left: 331px;">
@@ -82,7 +84,7 @@
 
 					<div class="table-responsive col-md-12 lista">
 						<table class="table table-striped" cellspacing="0" cellpadding="0">
-							<thead>
+							<thead style = "background: white;">
 								<tr>
 									<th>Cod</th>
 									<th>Nome do Passageiro</th>
@@ -92,7 +94,7 @@
 									<th class="actions">Ações</th>
 								</tr>
 							</thead>
-							<tbody id="contentList">
+							<tbody id="contentList" style = "background: white;">
 							</tbody>
 						</table>
 					</div>
