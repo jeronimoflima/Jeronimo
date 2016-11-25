@@ -11,8 +11,11 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+
 import org.codehaus.jackson.map.ObjectMapper;
+
 import br.com.GoTrip.objetos.Participante;
 import br.com.GoTrip.service.ParticipanteService;
 
@@ -71,12 +74,12 @@ public class ParticipanteRest extends UtilRest {
 	}
 
 	@DELETE
-	@Path("/deletarParticipante/{id}")
+	@Path("/deletarParticipante")
 	@Consumes("application/*")
-	public Response deletarParticipante(@PathParam("id") int id){
+	public Response deletarParticipante(@QueryParam("id") int id,@QueryParam("idExcur") int idExcursao){
 		try {
 			ParticipanteService service = new ParticipanteService();
-			service.deletarParticipante(id);
+			service.deletarParticipante(id, idExcursao);
 
 			return this.buildResponse("Participante deletado com sucesso.");
 		} catch (Exception e) {

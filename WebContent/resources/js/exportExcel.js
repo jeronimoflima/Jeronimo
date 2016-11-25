@@ -5,7 +5,7 @@
 	  });
 	  $("#busca").hide();
 	  doc.addHTML($('#principal'), function() {
-	    doc.save("teste.pdf");
+	    doc.save("relatório.pdf");
 	    $('#principal').find('table tr').each(function(){
 			  $(this).find('th:last,td:last').show();
 		  });

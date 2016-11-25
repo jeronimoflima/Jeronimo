@@ -157,16 +157,16 @@ public class JDBCParticipanteDAO implements ParticipanteDAO {
 
 		}
 	
-	public boolean deletarParticipante(int id) throws GoTripException{
+	public boolean deletarParticipante(int id, int idExcursao) throws GoTripException{
 		
-		String comando = "delete from participante_excursao where id_participantes = " + id;
-		String comando2 = "delete from participante where id = " + id ;
+		
+		String comando = "delete from participante_excursao where id_participantes = " + id
+							+ " and id_excursao = " + idExcursao;
 		Statement p;
-		
+		System.out.print(comando);
 		try {
 			p = this.conexao.createStatement();
 			p.execute(comando);
-			p.execute(comando2);
 			
 			} catch (SQLException e){
 				throw new GoTripException(e);
@@ -244,6 +244,5 @@ public class JDBCParticipanteDAO implements ParticipanteDAO {
 			}
 			return participante;
 	}
-	
 	
 }

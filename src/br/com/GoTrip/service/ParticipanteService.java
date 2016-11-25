@@ -122,7 +122,7 @@ public class ParticipanteService {
 
 	}
 
-	public void deletarParticipante(int id) throws GoTripException {
+	public void deletarParticipante(int id, int idExcursao) throws GoTripException {
 
 		Conexao conec = new Conexao();
 		Connection conexao = null;
@@ -131,11 +131,11 @@ public class ParticipanteService {
 			conexao = conec.abrirConexao();
 			conexao.setAutoCommit(false);
 			JDBCParticipanteDAO jdbcParticipante = new JDBCParticipanteDAO(conexao);
-			JDBCEnderecoDAO jdbcEndereco = new JDBCEnderecoDAO(conexao);
-			int idEnd = jdbcParticipante.buscarPorId(id).getEndereco().getId();
+			//JDBCEnderecoDAO jdbcEndereco = new JDBCEnderecoDAO(conexao);
+			//int idEnd = jdbcParticipante.buscarPorId(id).getEndereco().getId();
 	
-			jdbcEndereco.deletar(idEnd);
-			jdbcParticipante.deletarParticipante(id);
+			//jdbcEndereco.deletar(idEnd);
+			jdbcParticipante.deletarParticipante(id, idExcursao);
 			conexao.commit();
 			
 		} catch (Exception e) {

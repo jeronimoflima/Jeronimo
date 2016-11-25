@@ -21,7 +21,7 @@ GOTRIP.participanteRest = {};
 	
 	GOTRIP.participanteRest.deletar = function(config){
 		GOTRIP.ajax.del({
-				url : "/gotrip/rest/participanteRest/deletarParticipante/" + config.data,
+				url : "/gotrip/rest/participanteRest/deletarParticipante?id=" + config.data.valor1 + "&idExcur=" + config.data.valor2,
 				success : config.success,
 				error : config.error
 			});

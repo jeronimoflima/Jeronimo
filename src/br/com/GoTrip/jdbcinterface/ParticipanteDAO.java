@@ -9,7 +9,7 @@ public interface ParticipanteDAO {
 	
 	public Participante inserir(Participante participante) throws GoTripException;
 	public List<Participante> buscarPorNome(String nome) throws GoTripException;
-	public boolean deletarParticipante(int id) throws GoTripException;
+	public boolean deletarParticipante(int id, int idExcur) throws GoTripException;
 	public Participante buscarPorId(int cod) throws GoTripException;
 	public Participante atualizar(Participante participante) throws GoTripException;
 }

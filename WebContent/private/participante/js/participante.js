@@ -116,10 +116,12 @@ GOTRIP.participante = new Object();
 							idExcursao = $("#id_excursao").val();
 						GOTRIP.participante.exibirParticipantes(undefined, valorBusca, idExcursao);
 						
-					};// Fecha método GOTRIP.participante.buscar()				
-
+					};// Fecha método GOTRIP.participante.buscar()	
+					
+					
+					
 					GOTRIP.participante.deletarParticipante = function(id) {
-
+						var idExcur = GOTRIP.idExcursao;
 						bootbox.dialog({
 									message : "Deseja deletar o Participante?",
 									buttons : {
@@ -130,7 +132,7 @@ GOTRIP.participante = new Object();
 												if (result) {
 													
 													GOTRIP.participanteRest.deletar({
-														data : id,
+														data :{'valor1' : id, 'valor2' : idExcur },
 														success : function(data) {
 															GOTRIP.participante.buscar();
 														},
