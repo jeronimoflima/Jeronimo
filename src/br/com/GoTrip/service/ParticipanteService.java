@@ -100,6 +100,46 @@ public class ParticipanteService {
 
 	}
 	
+	
+	public Participante buscarParticipantePorEmail(@PathParam("email") String email) throws GoTripException {
+		
+
+		Participante participante = new Participante();
+		Conexao conec = new Conexao();
+		Connection conexao = null;
+		try {
+
+			conexao = conec.abrirConexao();
+			JDBCParticipanteDAO jdbcParticipante = new JDBCParticipanteDAO(conexao);
+			participante = jdbcParticipante.buscarPorEmail(email);
+			
+			if(participante != null){
+				
+				participante = jdbcParticipante.inserir(participante);
+				jdbcParticipante.inseriPartiNaExcursao(participante);
+				
+			}
+
+		} catch (Exception e) {
+			if (conexao != null) {
+				try {
+					conexao.rollback();
+				} catch (SQLException e1) {
+					throw new GoTripException(e1);
+				}
+			}
+			throw new GoTripException(e);
+
+		} finally {
+			conec.fecharConexao();
+		}
+
+		return participante;
+
+	}
+	
+	
+	
 	public List<Participante> buscarParticipantePelaExcursao(int idExcursao, String nome) throws GoTripException {
 		
 		List<Participante> participante = new ArrayList<Participante>();

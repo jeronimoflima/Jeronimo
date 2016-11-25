@@ -61,6 +61,20 @@ GOTRIP.participante = new Object();
 		$("#contentList").html(html);
 		
 	};// Fecha a declaração do método exibirParticipantes()
+	
+	GOTRIP.participante.verificaEmail = function() {
+				
+		var valido = GOTRIP.validaEmail();
+		
+		if(valido){
+				
+			var valorBusca = $("#email").val();
+			
+		GOTRIP.participante.buscarParticipantePorEmail(valorBusca);
+		
+		}
+		
+	};
 					
 					GOTRIP.participante.cadastrar = function() {					
 
@@ -72,10 +86,7 @@ GOTRIP.participante = new Object();
 							newPart.endereco = new Object();
 							newPart.endereco.cidade = new Object();
 							newPart.excursao = new Object();
-							/*var string = document.URL;
-							if(string.split('#')[1] > 0){
-								newPart.excursao.id = string.split('#')[1];
-							}; */
+							
 							newPart.id = $("#id").val();
 							newPart.nome = $("#nome").val();
 							newPart.data = $("#data").val();

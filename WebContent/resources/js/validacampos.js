@@ -1,4 +1,33 @@
 $(document).ready(function() {
+	
+	GOTRIP.validaEmail = function() {
+		
+
+			var email = document.getElementById("email").value;
+
+			if (email.indexOf("@") == -1 || // valida se existe
+			// o @
+			email.indexOf(".") == -1 || // valida se existe o .
+			email.indexOf("@") == 0 || // valida se tem texto
+			// antes do @
+			email.lastIndexOf(".") + 1 == email.length || // valida
+			// se
+			// tem
+			// texto
+			// depois do ponto
+			(email.indexOf("@") + 1 == email.indexOf("."))) { // valida
+				// se
+				// tem
+				// texto entre o @ e
+				// o .{
+				bootbox.alert("email incorreto");
+				document.getElementById("email").focus();
+				return false;
+			} else {
+				return true;
+			}
+	};
+	
 
 	GOTRIP.validaPart = function() {
 		

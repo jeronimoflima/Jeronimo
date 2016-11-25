@@ -72,6 +72,26 @@ public class ParticipanteRest extends UtilRest {
 			return this.buildErrorResponse(e.getMessage());
 		}
 	}
+	
+	
+	@GET
+	@Path("/buscarParticipantePorEmail/{email}")
+	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public Response buscarParticipantePorEmail(@PathParam("email") String email){
+		try {
+			Participante participante = new Participante();
+
+			ParticipanteService service = new ParticipanteService();
+			participante= service.buscarParticipantePorEmail(email);
+
+			return this.buildResponse(participante);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return this.buildErrorResponse(e.getMessage());
+		}
+	}
+	
+	
 
 	@DELETE
 	@Path("/deletarParticipante")

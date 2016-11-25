@@ -19,6 +19,14 @@ GOTRIP.participanteRest = {};
 			});
 		}
 	
+	GOTRIP.participanteRest.buscarParticipantePorEmail = function(config){
+		GOTRIP.ajax.get({
+				url : "/gotrip/rest/participanteRest/buscarParticipantePorEmail/" + config.data,
+				success : config.success,
+				error : config.error
+			});
+		}
+	
 	GOTRIP.participanteRest.deletar = function(config){
 		GOTRIP.ajax.del({
 				url : "/gotrip/rest/participanteRest/deletarParticipante?id=" + config.data.valor1 + "&idExcur=" + config.data.valor2,
