@@ -63,6 +63,7 @@ GOTRIP.participante = new Object();
 	};// Fecha a declaração do método exibirParticipantes()
 	
 	GOTRIP.participante.verificaEmail = function() {
+		
 				
 		var valido = GOTRIP.validaEmail();
 		
@@ -70,7 +71,7 @@ GOTRIP.participante = new Object();
 				
 			var valorBusca = $("#email").val();
 			
-		GOTRIP.participante.buscarParticipantePorEmail(valorBusca);
+		GOTRIP.participanteRest.buscarParticipantePorEmail(valorBusca);
 		
 		}
 		

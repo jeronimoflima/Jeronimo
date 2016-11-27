@@ -121,15 +121,8 @@ public class ParticipanteService {
 			}
 
 		} catch (Exception e) {
-			if (conexao != null) {
-				try {
-					conexao.rollback();
-				} catch (SQLException e1) {
-					throw new GoTripException(e1);
-				}
-			}
 			throw new GoTripException(e);
-
+			
 		} finally {
 			conec.fecharConexao();
 		}

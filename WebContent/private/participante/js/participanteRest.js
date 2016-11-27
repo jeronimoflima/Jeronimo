@@ -20,8 +20,9 @@ GOTRIP.participanteRest = {};
 		}
 	
 	GOTRIP.participanteRest.buscarParticipantePorEmail = function(config){
+				
 		GOTRIP.ajax.get({
-				url : "/gotrip/rest/participanteRest/buscarParticipantePorEmail/" + config.data,
+				url : "/gotrip/rest/participanteRest/buscarParticipantePorEmail/" + config,
 				success : config.success,
 				error : config.error
 			});

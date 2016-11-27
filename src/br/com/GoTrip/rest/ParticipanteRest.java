@@ -82,7 +82,7 @@ public class ParticipanteRest extends UtilRest {
 			Participante participante = new Participante();
 
 			ParticipanteService service = new ParticipanteService();
-			participante= service.buscarParticipantePorEmail(email);
+			participante = service.buscarParticipantePorEmail(email);
 
 			return this.buildResponse(participante);
 		} catch (Exception e) {

@@ -114,7 +114,7 @@ public class JDBCParticipanteDAO implements ParticipanteDAO {
 	
 	
 	public Participante buscarPorEmail(String email) throws GoTripException{
-		String comando = "select * from participante where email= " + email;
+		String comando = "select * from participante where email= " +email;
 		
 		
 		Participante participante = new Participante();
