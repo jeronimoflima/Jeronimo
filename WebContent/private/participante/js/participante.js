@@ -63,7 +63,6 @@ GOTRIP.participante = new Object();
 	};// Fecha a declaração do método exibirParticipantes()
 	
 	GOTRIP.participante.verificaEmail = function() {
-		
 				
 		var valido = GOTRIP.validaEmail();
 		
@@ -71,8 +70,29 @@ GOTRIP.participante = new Object();
 				
 			var valorBusca = $("#email").val();
 			
-		GOTRIP.participanteRest.buscarParticipantePorEmail(valorBusca);
-		
+	GOTRIP.participanteRest.buscarParticipantePorEmail({
+		data :valorBusca,
+		success : function(parti) {
+			$("#nome").val(parti.nome);
+			$("#data").val(parti.data);
+			$("#cpf").val(parti.cpf);
+			$("#email").val(parti.email);
+			$("#telefone").val(parti.telefone);
+			$("#cep").val(parti.endereco.cep);
+			$("#endereco").val(parti.endereco.nome);
+			$("#numero").val(parti.endereco.numero);
+			$("#complemento").val(parti.endereco.complemento);
+			$("#bairro").val(parti.endereco.bairro);
+			$("#cidade").val(parti.endereco.cidade.nome);
+			$("#estado").val(parti.endereco.cidade.estado);
+			$("#sexo").val(parti.sexo);
+			$("#rg").val(parti.rg);
+			$("#status").val(parti.status);
+			$("#id").val(parti.id);
+			$("#id_endereco").val(parti.endereco.id);
+			$("#id_cidade").val(parti.endereco.cidade.id);
+		}
+	})
 		}
 		
 	};
@@ -104,9 +124,20 @@ GOTRIP.participante = new Object();
 							newPart.sexo = $("#sexo").val();
 							newPart.rg = $("#rg").val();
 							newPart.status = $("#status").val();
-							newPart.excursao.id = $("#id_excursao").val();
+							newPart.excursao.id = GOTRIP.idExcursao;
 							
-							
+							if(newPart.id != 0){
+								GOTRIP.participanteRest.editarParticipante({
+									data : newPart,
+									success : function(msg) {
+										bootbox.alert(msg);
+										
+									},
+									error : function(err) {
+										bootbox.alert(err.responseText);
+									}
+							  });												
+						}else{								
 							GOTRIP.participanteRest.addParticipante({
 									data : newPart,
 									success : function(msg) {
@@ -117,7 +148,8 @@ GOTRIP.participante = new Object();
 									error : function(err) {
 										bootbox.alert("Erro ao cadastrar um novo participante: " + err.responseText);
 									}
-							  });
+							  });												
+						}
 							}// fecha o else
 						};// Fecha a function GOTRIP.participante.cadastrar()
 					
@@ -190,7 +222,7 @@ GOTRIP.participante = new Object();
 								$("#id").val(parti.id);
 								$("#id_endereco").val(parti.endereco.id);
 								$("#id_cidade").val(parti.endereco.cidade.id);
-								//$("id_excursao").val(parti.excursao.id);
+								//$("id_excursao").val(GOTRIP.idExcursao);
 								
 								$("#bt1").attr("onclick", "GOTRIP.participante.exibirEdicao('"+parti.id+"')");
 								$("#titulo").text("Editar Participante");
@@ -236,7 +268,7 @@ GOTRIP.participante = new Object();
 						newPart.id = $("#id").val();
 						newPart.endereco.id = $("#id_endereco").val();
 						newPart.endereco.cidade.id = $("#id_cidade").val();
-						newPart.excursao.id = $("#id_excursao").val();
+						newPart.excursao.id = GOTRIP.idExcursao;
 						
 						GOTRIP.participanteRest.editarParticipante({
 							data : newPart,
@@ -261,4 +293,4 @@ GOTRIP.participante.limpar = function() {
 		$(this).val('');
 	});
 };
-//# sourceURL = participante.js
+//# sourceURL=participante.js

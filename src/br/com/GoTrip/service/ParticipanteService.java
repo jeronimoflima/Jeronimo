@@ -113,12 +113,6 @@ public class ParticipanteService {
 			JDBCParticipanteDAO jdbcParticipante = new JDBCParticipanteDAO(conexao);
 			participante = jdbcParticipante.buscarPorEmail(email);
 			
-			if(participante != null){
-				
-				participante = jdbcParticipante.inserir(participante);
-				jdbcParticipante.inseriPartiNaExcursao(participante);
-				
-			}
 
 		} catch (Exception e) {
 			throw new GoTripException(e);
@@ -225,6 +219,10 @@ public class ParticipanteService {
 			participante.setEndereco(endereco);
 	
 			jdbcParticipante.atualizar(participante);
+			
+			if(jdbcParticipante.verificaExcursao(participante))
+				jdbcParticipante.inseriPartiNaExcursao(participante);
+			
 		}catch (Exception e){
 			if(conexao != null){
 				try{

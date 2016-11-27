@@ -114,7 +114,7 @@ public class JDBCParticipanteDAO implements ParticipanteDAO {
 	
 	
 	public Participante buscarPorEmail(String email) throws GoTripException{
-		String comando = "select * from participante where email= " +email;
+		String comando = " select id from participante where email= '" +email+"'";
 		
 		
 		Participante participante = new Participante();
@@ -125,25 +125,16 @@ public class JDBCParticipanteDAO implements ParticipanteDAO {
 			ResultSet rs = stmt.executeQuery(comando);
 			while (rs.next()){
 				
-				participante.setEndereco(new Endereco());
-				participante.getEndereco().setCidade(new Cidade());
 				
 				
 				participante.setId(rs.getInt("id"));
-				participante.setNome(rs.getString("nome"));
-				participante.setData(rs.getDate("data_nascimento"));
-				participante.setCpf(rs.getString("cpf"));
-				participante.setEmail(rs.getString("email"));
-				participante.setTelefone(rs.getString("telefone"));
-				participante.setSexo(rs.getString("sexo"));
-				participante.setRg(rs.getString("rg"));
-				participante.setStatus(rs.getString("status"));
+				
 				
 				}
 		}catch (Exception e){
 			throw new GoTripException(e);
 		}
-		return participante;
+		return buscarPorId(participante.getId());
 
 		}
 	
@@ -277,6 +268,23 @@ public class JDBCParticipanteDAO implements ParticipanteDAO {
 				throw new GoTripException(e);
 			}
 			return participante;
+	}
+	public boolean verificaExcursao(Participante participante) throws GoTripException {
+		StringBuilder comando = new StringBuilder();
+		comando.append("SELECT * ");
+		comando.append("FROM participante_excursao ");
+		comando.append("WHERE id_participantes = " + participante.getId());
+		comando.append(" AND id_excursao = " +participante.getExcursao().getId());
+		
+		try{
+			java.sql.Statement stmt = conexao.createStatement();
+			ResultSet rs = stmt.executeQuery(comando.toString());
+			
+			return rs.next() ? false : true;
+
+		}catch (Exception e){
+			throw new GoTripException(e);
+		}
 	}
 	
 }
