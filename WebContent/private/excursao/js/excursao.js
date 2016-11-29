@@ -296,7 +296,6 @@ GOTRIP.excursao.exibirResultado = function(id) {
 							data : id,
 							success : function(excur) {
 								$("#nome").html(excur.nome);
-								debugger;
 								
 								var c = excur.categoria;
 								$("#categoria").html("Categoria: " + c);

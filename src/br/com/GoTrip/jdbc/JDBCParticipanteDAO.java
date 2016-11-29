@@ -139,15 +139,11 @@ public class JDBCParticipanteDAO implements ParticipanteDAO {
 		}
 	
 	public List<Participante> buscarParticipantePelaExcursao(int idExcursao, String nome) throws GoTripException {
-		/*String comando = "select * from participante where id IN (SELECT id_participantes FROM participante_excursao WHERE id_excursao = " + idExcursao+")";
-		if(!nome.equals("null") && !nome.equals("")){
-			comando += " and nome like'" + nome + "%'";
-		}*/
 		
 		String comando= "select * from participante "
 				+" inner join participante_excursao on participante_excursao.id_participantes = participante.id "
-				+" where participante_excursao.id_excursao = " + idExcursao 
-				+" and participante.status = 'Ativo'";
+				+" where participante_excursao.id_excursao = " + idExcursao;
+				//+" and participante.status = 'Ativo'";
 				if(!nome.equals("null") && !nome.equals("")){
 					comando += " and nome like'" + nome + "%'";
 				

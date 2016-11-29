@@ -10,7 +10,7 @@
 <script src="/gotrip/private/excursao/js/excursaoRest.js"></script>
 <script src="/gotrip/private/participante/js/participanteRest.js"></script>
 <script src="/gotrip/private/participante/js/participante.js"></script>
-<script src="/gotrip/resources/js/exportExcel.js"></script>
+<script src="/gotrip/resources/js/imprimePDF.js"></script>
 
 
 </head>
@@ -58,7 +58,7 @@
 				<div id="top" class="row">
 					<div class="col-md-6">
 						<div id="navbar" class="navbar-collapse collapse">
-							<p class="informa" id="nome_usuario"></p>
+							<p class="informa" id="nome_usuario" style="margin-top: 12px;"></p>
 							<p class="informa" id="data"></p>
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 					<div id ="busca" class="row-fluid col-sm-6">
 						<div id="imaginary_container">
 							<div class="input-group stylish-input-group"
-								style="width: 280; margin-left: 331px;">
+								style="width: 280; margin-left: 331px; margin-top: 20px;">
 								<input type="text" id="consultarParticipante"
 									class="form-control" placeholder="Buscar Participante">
 								<span class="input-group-addon">

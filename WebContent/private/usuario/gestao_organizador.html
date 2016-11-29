@@ -7,14 +7,15 @@
 <link href="/gotrip/resources/css/lista.css" rel="stylesheet">
 <!-- Chamadas JS -->
 <script src="/gotrip/resources/js/jquery-2.1.4.js"></script>
-<script src="https://cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js"></script>
-<script src="https://rawgit.com/niklasvh/html2canvas/master/dist/html2canvas.js"></script>
+<script src="/gotrip/resources/js/jspdf.min.js"></script>
+<script src="/gotrip/resources/js/html2canvas.js"></script>
+
 
 <script src="/gotrip/resources/js/ajax.js"></script>
 <script src="/gotrip/resources/js/bootstrap.js"></script>
 <script src="/gotrip/resources/js/bootbox.js"></script>
-<script src="/gotrip/resources/js/jquery.mask.min.js"></script>
 <script src="/gotrip/resources/js/arquivo.js"></script>
+<script src="/gotrip/resources/js/jquery.mask.min.js"></script>
 <script src="/gotrip/resources/js/dataformatada.js"></script>
 <script src="/gotrip/private/excursao/js/excursaoRest.js"></script>
 <script src="/gotrip/private/excursao/js/excursao.js"></script>
@@ -22,14 +23,10 @@
 </head>
 
 <body>
-<form action="../../LogoutServlet" method="post">
-<button type="submit">SAir????</button>
-</form>
-
 	<nav class="navbar navbar-default navbar-inverse">
 		<div class="container-fluid col-sm-12">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/gotrip/index.html">GoTRip</a>
+				<a class="navbar-brand" href="/gotrip/private/usuario/gestao_organizador.html">GoTRip</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,6 +39,8 @@
 				<li><a id="add_administrador" class="opcoes" href="#"
 						onclick="carregar('/gotrip/private/excursao/cadastrar_excursao.html')">Nova
 							Excursão <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+					</a></li>
+					<li><a class="opcoes" href="../../LogoutServlet">Sair <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
 					</a></li>
 					<!-- li><a class="opcoes" href="#"
 						onclick="carregar('/gotrip/private/participante/lista_participantes.html')">Participantes

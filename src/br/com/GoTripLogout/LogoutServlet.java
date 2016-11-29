@@ -1,33 +1,31 @@
 package br.com.GoTripLogout;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LogoutServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
-
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) {
-		try {
-			proccess(request, response);
-		} catch (Exception e) {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		process(req, resp);
+	}
+	
+	public void process(ServletRequest request, ServletResponse response)throws IOException, ServletException {
+		try{
+			String context = request.getServletContext().getContextPath();
+			((HttpServletRequest) request).getSession().invalidate();
+			((HttpServletResponse)response).sendRedirect(context+"/index.html");
+		} catch(Exception e){
 			e.printStackTrace();
 		}
 	}
-
-	private void proccess(HttpServletRequest request,
-			HttpServletResponse response) {
-
-		try {
-			request.getSession().invalidate();
-			response.sendRedirect(request.getContextPath()+"/index.html");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
 }

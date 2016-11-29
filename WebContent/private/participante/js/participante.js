@@ -1,12 +1,10 @@
 GOTRIP.participante = new Object();
-	
 
 	$(document).ready(function() {	
 	GOTRIP.participante.exibirParticipantes = function(
 			listaDeParticipantes, valorBusca, idExcursao ) {
 		
 		var html = "";
-
 		if (listaDeParticipantes != undefined
 				&& listaDeParticipantes.length > 0
 				&& listaDeParticipantes[0].id != undefined) {
@@ -20,13 +18,13 @@ GOTRIP.participante = new Object();
 						+ listaDeParticipantes[i].nome
 						+ "</td>"
 						+ "<td>"
-						+ listaDeParticipantes[i].rg
+						+ listaDeParticipantes[i].rg.replace(/^(\d)(\d{3})(\d+)$/,'$1.$2.$3')
 						+ "</td>"
+						+ "<td><div>"
+						+ listaDeParticipantes[i].cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/,'$1.$2.$3-$4')
+						+ "</div></td>"
 						+ "<td>"
-						+ listaDeParticipantes[i].cpf
-						+ "</td>"
-						+ "<td>"
-						+ listaDeParticipantes[i].telefone
+						+ listaDeParticipantes[i].telefone.replace(/^(\d{2})(\d{4,5})(\d{4})$/, '($1)$2-$3')
 						+ "</td>"
 						+ "<td class='actions'>"
 						+ "<a id='novo_participante' class='btn btn-primary' onclick='GOTRIP.participante.editarParticipante("
@@ -61,6 +59,7 @@ GOTRIP.participante = new Object();
 		$("#contentList").html(html);
 		
 	};// Fecha a declaração do método exibirParticipantes()
+	
 	
 	GOTRIP.participante.verificaEmail = function() {
 				
