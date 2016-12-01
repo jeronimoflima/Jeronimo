@@ -61,21 +61,21 @@ $(document).ready(function() {
 										+ listaDeAdministradores[i].nome
 										+ "</td>"
 										+ "<td>"
-										+ listaDeAdministradores[i].cpf
+										+ listaDeAdministradores[i].cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/,'$1.$2.$3-$4')
 										+ "</td>"
 										+ "<td>"
 										+ listaDeAdministradores[i].email
 										+ "</td>"
 										+ "<td>"
-										+ listaDeAdministradores[i].telefone
+										+ listaDeAdministradores[i].telefone.replace(/^(\d{2})(\d{4,5})(\d{4})$/, '($1)$2-$3')
 										+ "</td>"
 										+ "<td class='actions'>"
-										+ "<a id='novo_administrador' class='btn btn-default btn-xs' onclick='GOTRIP.administrador.editarAdministrador("
+										+ "<a id='novo_administrador' class='btn btn-primary' onclick='GOTRIP.administrador.editarAdministrador("
 										+ listaDeAdministradores[i].id
-										+ ")' >Editar</a>"
-										+ "<a class='btn btn-default btn-xs' onclick='GOTRIP.administrador.deletarAdministrador("
+										+ ")' > <span class='glyphicon glyphicon-pencil'</a>"
+										+ "<a class='btn btn-danger' onclick='GOTRIP.administrador.deletarAdministrador("
 										+ listaDeAdministradores[i].id
-										+ ")' >Deletar</a>" + "</td>" + "</tr>";
+										+ ")' > <span class='glyphicon glyphicon-trash' aria-hidden='true'></a>" + "</td>" + "</tr>";
 							}
 						} else {
 							if (listaDeAdministradores == undefined
@@ -99,7 +99,7 @@ $(document).ready(function() {
 							}
 						}
 						
-						$("#content").html(html);
+						$("#contentADM").html(html);
 						
 					};// Fecha a declaração do método exibirContatos()
 

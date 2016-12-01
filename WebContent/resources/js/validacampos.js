@@ -133,7 +133,7 @@ $(document).ready(function() {
 					};
 					
 						GOTRIP.validaOrga = function() {
-						
+												
 						// Validações formulário
 						if (document.getElementById("nome").value == ""
 								|| document.getElementById("data").value == ""

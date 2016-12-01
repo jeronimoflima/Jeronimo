@@ -70,21 +70,21 @@ $(document).ready(function() {
 										+ listaDeOrganizadores[i].nome
 										+ "</td>"
 										+ "<td>"
-										+ listaDeOrganizadores[i].cpf
+										+ listaDeOrganizadores[i].cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/,'$1.$2.$3-$4')
 										+ "</td>"
 										+ "<td>"
 										+ listaDeOrganizadores[i].email
 										+ "</td>"
 										+ "<td>"
-										+ listaDeOrganizadores[i].telefone
+										+ listaDeOrganizadores[i].telefone.replace(/^(\d{2})(\d{4,5})(\d{4})$/, '($1)$2-$3')
 										+ "</td>"
 										+ "<td class='actions'>"
-										+ "<a id='novo_organizador' class='btn btn-default btn-xs' onclick='GOTRIP.organizador.editarOrganizador("
+										+ "<a id='novo_organizador' class='btn btn-primary' onclick='GOTRIP.organizador.editarOrganizador("
 										+ listaDeOrganizadores[i].id
-										+ ")' >Editar</a>"
-										+ "<a class='btn btn-default btn-xs' onclick='GOTRIP.organizador.deletarOrganizador("
+										+ ")' > <span class='glyphicon glyphicon-pencil'</a>"
+										+ "<a class='btn btn-danger' onclick='GOTRIP.organizador.deletarOrganizador("
 										+ listaDeOrganizadores[i].id
-										+ ")' >Deletar</a>" + "</td>" + "</tr>";
+										+ ")' > <span class='glyphicon glyphicon-trash' aria-hidden='true'></a>" + "</td>" + "</tr>";
 							}
 						} else {
 							if (listaDeOrganizadores == undefined
@@ -185,7 +185,7 @@ $(document).ready(function() {
 								bootbox.alert("Erro ao editar organizador: " + err.responseText);
 							}
 					  });
-						$("#principal").load('/gotrip/private/usuario/cadastrar_organizador.html')
+						$("#principal").load('/gotrip/public/cadastrar_organizador.html')
 						
 						
 
@@ -233,6 +233,49 @@ $(document).ready(function() {
 	
 						};
 						}
+					
+					GOTRIP.organizador.visualizarOrganizador = function(id) {
+						debugger;
+						GOTRIP.usuarioRest.buscarUsuarioPeloId({
+							data :{'valor1' : id, 'valor2' : "2" },
+							success : function(orga) {
+								$("#nome").val(orga.nome);
+								$("#data").val(orga.data);
+								$("#cpf").val(orga.cpf);
+								$("#email").val(orga.email);
+								$("#telefone").val(orga.telefone);
+								$("#cep").val(orga.endereco.cep);
+								$("#endereco").val(orga.endereco.nome);
+								$("#numero").val(orga.endereco.numero);
+								$("#complemento").val(orga.endereco.complemento);
+								$("#bairro").val(orga.endereco.bairro);
+								$("#cidade").val(orga.endereco.cidade.nome);
+								$("#estado").val(orga.endereco.cidade.estado);
+								//$("#senha").val(orga.senha);
+								//$("#confirmasenha").val(orga.confirmasenha);
+								$("#id").val(orga.id);
+								$("#id_endereco").val(orga.endereco.id);
+								$("#id_cidade").val(orga.endereco.cidade.id);
+								
+								$("#bt1").attr("onclick", "GOTRIP.organizador.exibirEdicao('"+orga.id+"')");
+								$("#titulo").text("Editar Organizador");
+								$("#bt1").text("Editar");
+								$("#term").hide();
+								
+								
+								
+							},
+							
+							error : function(err) {
+								bootbox.alert("Erro ao editar organizador: " + err.responseText);
+							}
+					  });
+						$("#principal").load('/gotrip/private/usuario/visualizar_organizador.html')
+						
+
+					};
+					
+					
 					});
 
 GOTRIP.organizador.limpar = function() {

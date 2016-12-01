@@ -14,16 +14,36 @@ function carregar1(caminho,container){
 	
 }
 	
+
 $(document).ready(function(){
 	
-	$("#telefone").mask('(99)9999-9999');
-	 $("#cpf").mask('999.999.999-99');
-	 $("#cep").mask('99999-999');
-	 $("#telefoneEdit").mask('(99)9999-9999');
-	 $("#cpfEdit").mask('999.999.999-99');
-	 $("#cepEdit").mask('99999-999');
-	 $("#fone_usuario").mask('(99)9999-9999');
-	 
-		
+	var parameters = getParameters();
+			if (parameters.login == "invalid") {
+				bootbox.alert("Usuário e/ou senha inválidos");
+				console.log("AQUI");
+			}
 
-     });
+			function getParameters() {
+				var parameters = {};
+				if (window.location.search != "") {
+					//debugger;
+					var arr = window.location.search.substring(1).split("&");
+					arr.forEach(function(item) {
+						var arr2 = item.split("=");
+						parameters[arr2[0]] = arr2[1];
+					});
+				}
+				return parameters;
+			}
+			
+			$("#telefone").mask('(99)9999-9999');
+			 $("#cpf").mask('999.999.999-99');
+			 $("#cep").mask('99999-999');
+			 $("#telefoneEdit").mask('(99)9999-9999');
+			 $("#cpfEdit").mask('999.999.999-99');
+			 $("#cepEdit").mask('99999-999');
+			 $("#fone_usuario").mask('(99)9999-9999');
+	})
+	
+	
+	

@@ -16,13 +16,14 @@
 <script src="/gotrip/resources/js/arquivo.js"></script>
 <script src="/gotrip/private/usuario/js/usuarioRest.js"></script>
 <script src="/gotrip/private/usuario/js/administrador.js"></script>
+<script src="/gotrip/private/usuario/js/organizador.js"></script>
 </head>
 
 <body>
 	<nav class="navbar navbar-default navbar-inverse">
 		<div class="container-fluid col-sm-12">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/gotrip/index.html">GoTRip</a>
+				<a class="navbar-brand" href="/gotrip/private/usuario/gestao_administrador.html">GoTRip</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,6 +41,8 @@
 					<li id="gerar"><a type="button" class="opcoes" href="#"
 						data-toggle="modal" data-target="#myModal">Relatório Geral <span
 							class="glyphicon glyphicon-file" aria-hidden="true"></span></a></li>
+							<li><a class="opcoes" href="../../LogoutServlet">Sair <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+					</a></li>
 				</ul>
 			</div>
 		</div>
@@ -96,7 +99,7 @@
 								<th class="actions">Ações</th>
 							</tr>
 						</thead>
-						<tbody id="content">
+						<tbody id="contentADM">
 						</tbody>
 					</table>
 				</div>
@@ -108,33 +111,6 @@
 			<!-- /#bottom -->
 		</div>
 		<!-- /#main -->
-	</div>
-	<div class="container-fluid">
-		<div class="row-fluid col-sm-12">
-			<footer>
-				<div class="navbar navbar-inverse navbar-fixed-bottom">
-					<div class="navbar-collapse collapse" id="footer-body">
-						<ul class="nav navbar-nav">
-							<li><a id="quem" href="#">Que Somos</a></li>
-							<li><a id="termos" href="#">Termos</a></li>
-							<li><a href="#" data-toggle="popover" title="GoTRip"
-								data-html="true" data-placement="top"
-								data-content="
-                      jeronimoflima@yahoo.com.br<br>
-                      Rua Videira, 111<br>
-                      Joinville - SC.<br>
-                      47-3278-1497
-                      ">Contato</a></li>
-						</ul>
-					</div>
-				</div>
-				<script>
-					$(document).ready(function() {
-						$('[data-toggle="popover"]').popover();
-					});
-				</script>
-			</footer>
-		</div>
 	</div>
 </body>
 </html>

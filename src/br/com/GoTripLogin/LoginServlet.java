@@ -59,7 +59,8 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				msg.put("msg", "Erro Login");
 				sessao.setAttribute("msg", "Usuário ou senha inválido");
-				response.sendRedirect(context + "/index.html");
+				//response.sendRedirect(context + "/index.html");
+				response.sendRedirect(context + "/index.html?login=invalid");
 
 			}
 
