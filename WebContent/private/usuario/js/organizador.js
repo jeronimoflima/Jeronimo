@@ -16,7 +16,7 @@ $(document).ready(function() {
 							newOrga.nome = $("#nome").val();
 							newOrga.data = $("#data").val();
 							newOrga.cpf = $("#cpf").val().replace(/[^\d]+/g,'');
-							newOrga.email = $("#email").val();
+							newOrga.email = $("#emailOrg").val();
 							newOrga.telefone = $("#telefone").val().replace(/[^\d]+/g,'');
 							newOrga.endereco.cep = $("#cep").val().replace(/[^\d]+/g,'');
 							newOrga.endereco.nome = $("#endereco").val();
@@ -25,8 +25,8 @@ $(document).ready(function() {
 							newOrga.endereco.bairro = $("#bairro").val();
 							newOrga.endereco.cidade.nome = $("#cidade").val();
 							newOrga.endereco.cidade.estado = $("#estado").val();
-							newOrga.senha = btoa ($("#senha").val());
-							newOrga.confirmasenha = btoa ($("#confirmasenha").val());
+							newOrga.senha = btoa ($("#senhaOrg").val());
+							newOrga.confirmasenha = btoa ($("#confirmasenhaOrg").val());
 							newOrga.tipo = 2;
 							
 							
@@ -157,7 +157,7 @@ $(document).ready(function() {
 								$("#nome").val(orga.nome);
 								$("#data").val(orga.data);
 								$("#cpf").val(orga.cpf);
-								$("#email").val(orga.email);
+								$("#emailOrg").val(orga.email);
 								$("#telefone").val(orga.telefone);
 								$("#cep").val(orga.endereco.cep);
 								$("#endereco").val(orga.endereco.nome);
@@ -166,8 +166,8 @@ $(document).ready(function() {
 								$("#bairro").val(orga.endereco.bairro);
 								$("#cidade").val(orga.endereco.cidade.nome);
 								$("#estado").val(orga.endereco.cidade.estado);
-								//$("#senha").val(orga.senha);
-								//$("#confirmasenha").val(orga.confirmasenha);
+								//$("#senhaOrg").val(orga.senha);
+								//$("#confirmasenhaOrg").val(orga.confirmasenha);
 								$("#id").val(orga.id);
 								$("#id_endereco").val(orga.endereco.id);
 								$("#id_cidade").val(orga.endereco.cidade.id);
@@ -204,7 +204,7 @@ $(document).ready(function() {
 							newOrga.nome = $("#nome").val();
 							newOrga.data = $("#data").val();
 							newOrga.cpf = $("#cpf").val().replace(/[^\d]+/g,'');
-							newOrga.email = $("#email").val();
+							newOrga.email = $("#emailOrg").val();
 							newOrga.telefone = $("#telefone").val().replace(/[^\d]+/g,'');
 							newOrga.endereco.cep = $("#cep").val().replace(/[^\d]+/g,'');
 							newOrga.endereco.nome = $("#endereco").val();
@@ -213,8 +213,8 @@ $(document).ready(function() {
 							newOrga.endereco.bairro = $("#bairro").val();
 							newOrga.endereco.cidade.nome = $("#cidade").val();
 							newOrga.endereco.cidade.estado = $("#estado").val();
-							newOrga.senha = btoa ($("#confirmasenha").val());
-							newOrga.confirmasenha = btoa ($("#confirmasenha").val());
+							newOrga.senha = btoa ($("#senhaOrg").val());
+							newOrga.confirmasenha = btoa ($("#confirmasenhaOrg").val());
 							newOrga.id = $("#id").val();
 							newOrga.endereco.id = $("#id_endereco").val();
 							newOrga.endereco.cidade.id = $("#id_cidade").val();
@@ -242,7 +242,7 @@ $(document).ready(function() {
 								$("#nome").val(orga.nome);
 								$("#data").val(orga.data);
 								$("#cpf").val(orga.cpf);
-								$("#email").val(orga.email);
+								$("#emailOrg").val(orga.email);
 								$("#telefone").val(orga.telefone);
 								$("#cep").val(orga.endereco.cep);
 								$("#endereco").val(orga.endereco.nome);
@@ -251,8 +251,8 @@ $(document).ready(function() {
 								$("#bairro").val(orga.endereco.bairro);
 								$("#cidade").val(orga.endereco.cidade.nome);
 								$("#estado").val(orga.endereco.cidade.estado);
-								//$("#senha").val(orga.senha);
-								//$("#confirmasenha").val(orga.confirmasenha);
+								//$("#senhaOrg").val(orga.senha);
+								//$("#confirmasenhaOrg").val(orga.confirmasenha);
 								$("#id").val(orga.id);
 								$("#id_endereco").val(orga.endereco.id);
 								$("#id_cidade").val(orga.endereco.cidade.id);

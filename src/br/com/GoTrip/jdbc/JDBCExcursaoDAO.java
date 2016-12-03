@@ -69,18 +69,18 @@ public class JDBCExcursaoDAO implements ExcursaoDAO {
 		 */
 
 		String comando = "SELECT e.*, p.id_participantes, p.id_excursao, count(id_participantes) AS total FROM excursao e "
-				+ " LEFT JOIN participante_excursao p ON e.id_excursao = p.id_excursao "
-				+ " WHERE e.id_usuario = " + id;
-		if (!nome.equals("null") && !nome.equals("")) {
+				+ " LEFT JOIN participante_excursao p ON e.id_excursao = p.id_excursao WHERE 1=1 ";
+		if(id != 0)		
+			comando += " and e.id_usuario = " + id;
+		
+		if (!nome.equals("null") && !nome.equals("")) 
 			comando += " and nome like'" + nome + "%'";
-
-		}else{
+		else
 			comando += " group by p.id_excursao ";
-	}
+	
 
 		List<Excursao> listExcursao = new ArrayList<Excursao>();
 		Excursao excursao = null;
-		System.out.print("OI");
 
 		try {
 			java.sql.Statement stmt = conexao.createStatement();

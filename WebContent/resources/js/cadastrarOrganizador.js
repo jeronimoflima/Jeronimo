@@ -17,7 +17,7 @@ $(document).ready(function() {
 							newOrga.nome = $("#nome").val();
 							newOrga.data = $("#data").val();
 							newOrga.cpf = $("#cpf").val().replace(/[^\d]+/g,'');
-							newOrga.email = $("#email").val();
+							newOrga.email = $("#emailOrg").val();
 							newOrga.telefone = $("#telefone").val().replace(/[^\d]+/g,'');
 							newOrga.endereco.cep = $("#cep").val().replace(/[^\d]+/g,'');
 							newOrga.endereco.nome = $("#endereco").val();
@@ -26,8 +26,8 @@ $(document).ready(function() {
 							newOrga.endereco.bairro = $("#bairro").val();
 							newOrga.endereco.cidade.nome = $("#cidade").val();
 							newOrga.endereco.cidade.estado = $("#estado").val();
-							newOrga.senha = btoa ($("#senha").val());
-							newOrga.confirmasenha = btoa ($("#confirmasenha").val());
+							newOrga.senha = btoa ($("#senhaOrg").val());
+							newOrga.confirmasenha = btoa ($("#confirmasenhaOrg").val());
 							newOrga.tipo = 2;
 							
 							
@@ -66,7 +66,7 @@ GOTRIP.validaOrga2 = function() {
 	if (document.getElementById("nome").value == ""
 			|| document.getElementById("data").value == ""
 					|| document.getElementById("cpf").value == ""
-					|| document.getElementById("email").value == ""
+					|| document.getElementById("emailOrg").value == ""
 					|| document.getElementById("telefone").value == ""
 				    || document.getElementById("cep").value == ""
 					|| document.getElementById("endereco").value == ""
@@ -74,8 +74,8 @@ GOTRIP.validaOrga2 = function() {
 					|| document.getElementById("bairro").value == ""
 					|| document.getElementById("cidade").value == ""
 					|| document.getElementById("estado").value == ""
-					|| document.getElementById("senha").value == ""
-					|| document.getElementById("confirmasenha").value == "") {
+					|| document.getElementById("senhaOrg").value == ""
+					|| document.getElementById("confirmasenhaOrg").value == "") {
 
 		bootbox.alert("Todos os campos são obrigatórios de preenchimento!");
 
@@ -83,7 +83,7 @@ GOTRIP.validaOrga2 = function() {
 
 	} else {
 
-		var email = document.getElementById("email").value;
+		var email = document.getElementById("emailOrg").value;
 
 		if (email.indexOf("@") == -1 || // valida se existe
 		// o @
@@ -101,13 +101,13 @@ GOTRIP.validaOrga2 = function() {
 			// texto entre o @ e
 			// o .{
 			bootbox.alert("email incorreto");
-			document.getElementById("email").focus();
+			document.getElementById("emailOrg").focus();
 			return false;
 
 		} else {
 			
-			senha1 = document.getElementById("senha").value;
-			senha2 = document.getElementById("confirmasenha").value;
+			senha1 = document.getElementById("senhaOrg").value;
+			senha2 = document.getElementById("confirmasenhaOrg").value;
 			if (senha1 != senha2) {
 
 				bootbox.alert("As senhas digitadas não conferem!");

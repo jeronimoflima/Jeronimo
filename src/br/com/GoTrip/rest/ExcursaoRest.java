@@ -68,7 +68,13 @@ public class ExcursaoRest extends UtilRest {
 			List<Excursao> excursoes = new ArrayList<Excursao>();
 
 			ExcursaoService service = new ExcursaoService();
-			int idUsuario = getUsuario().getId();
+			int idUsuario = 0;
+			try {
+				idUsuario = getUsuario().getId();
+			}catch(Exception e){
+				//usuario nao esta logado
+			}
+			
 			excursoes= service.buscarExcursaoPorNome(nome, idUsuario);
 
 			return this.buildResponse(excursoes);

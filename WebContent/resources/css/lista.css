@@ -1,11 +1,5 @@
-.logo{
+ 	
 
-	margin-top: 3%;
-	margin-left: 5%;
-	padding: 0;
-	width: 160px;    
-	height: auto;  	
-}
 .cabeca{
 	border-color: #999999;
 	border-bottom-width: 5px;
@@ -34,25 +28,7 @@ h1{
 }
 
 
-/***campo de busca***/
-.busca{
-    margin-top:20px; 
-    margin-left: 1%;
-}
-.stylish-input-group .input-group-addon{
-    background: white !important; 
-    border-color:#808080;
-}
-.stylish-input-group .form-control{
-	border-right:0; 
-	box-shadow:0 0 0; 
-	border-color:#808080;
 
-}
-.stylish-input-group button{
-    border:0;
-    background:transparent;
-}
 .opcoes{
 	font-size: 18px;
 	font-family: verdana;

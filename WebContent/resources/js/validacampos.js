@@ -138,7 +138,7 @@ $(document).ready(function() {
 						if (document.getElementById("nome").value == ""
 								|| document.getElementById("data").value == ""
 								|| document.getElementById("cpf").value == ""
-								|| document.getElementById("email").value == ""
+								|| document.getElementById("emailOrg").value == ""
 								|| document.getElementById("telefone").value == ""
 								|| document.getElementById("cep").value == ""
 								|| document.getElementById("endereco").value == ""
@@ -146,8 +146,8 @@ $(document).ready(function() {
 								|| document.getElementById("bairro").value == ""
 								|| document.getElementById("cidade").value == ""
 								|| document.getElementById("estado").value == ""
-								|| document.getElementById("senha").value == ""
-								|| document.getElementById("confirmasenha").value == "") {
+								|| document.getElementById("senhaOrg").value == ""
+								|| document.getElementById("confirmasenhaOrg").value == "") {
 
 							bootbox.alert("Todos os campos são obrigatórios de preenchimento!");
 
@@ -155,7 +155,7 @@ $(document).ready(function() {
 
 						} else {
 
-							var email = document.getElementById("email").value;
+							var email = document.getElementById("emailOrg").value;
 
 							if (email.indexOf("@") == -1 || // valida se existe
 							// o @
@@ -173,17 +173,17 @@ $(document).ready(function() {
 								// texto entre o @ e
 								// o .{
 								bootbox.alert("email incorreto");
-								document.getElementById("email").focus();
+								document.getElementById("emailOrg").focus();
 								return false;
 
 							} else {
 								
-								senha1 = document.getElementById("senha").value;
-								senha2 = document.getElementById("confirmasenha").value;
+								senha1 = document.getElementById("senhaOrg").value;
+								senha2 = document.getElementById("confirmasenhaOrg").value;
 								if (senha1 != senha2) {
 
 									bootbox.alert("As senhas digitadas não conferem!");
-									document.getElementById("senha").focus();
+									document.getElementById("senhaOrg").focus();
 									return false;
 								} else if 
 									($("#id").val() == ""  && $("input[name='termo']:checked").length<=0) {

@@ -37,6 +37,7 @@
 .stylish-input-group .input-group-addon{
     background: white !important; 
     border-color:#FF3300;
+   
 }
 .stylish-input-group .form-control{
 	border-right:0; 
@@ -47,6 +48,7 @@
 .stylish-input-group button{
     border:0;
     background:transparent;
+    
 }
 
 .amostra{

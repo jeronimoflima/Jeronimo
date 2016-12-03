@@ -40,7 +40,7 @@ public class UsuarioRest extends UtilRest {
 			UsuarioService service = new UsuarioService();
 				service.addUsuario(usuario);
 			
-			return this.buildResponse("Usuário cadastrado com sucesso.");
+			return this.buildResponse("Usuário cadastrado com sucesso. Faça se Login!");
 
 		} catch (Exception e) {
 			e.printStackTrace();
