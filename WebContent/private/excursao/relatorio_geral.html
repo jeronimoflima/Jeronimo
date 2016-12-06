@@ -1,0 +1,103 @@
+
+<html>
+<head>
+<title>relatório geral</title>
+<meta charset="utf-8">
+<link href="/gotrip/resources/css/bootstrap.css" rel="stylesheet">
+<link href="/gotrip/resources/css/lista.css" rel="stylesheet">
+
+<!--link href="css/navbar.css" rel="stylesheet"-->
+<link href="calendar/css/datepicker.css" rel="stylesheet">
+<!-- Chamadas JS -->
+<script src="/gotrip/resources/js/jquery-2.1.4.js"></script>
+<script src="/gotrip/resources/js/jspdf.min.js"></script>
+<script src="/gotrip/resources/js/html2canvas.js"></script>
+
+
+<script src="/gotrip/resources/js/ajax.js"></script>
+<script src="/gotrip/resources/js/bootstrap.js"></script>
+<script src="/gotrip/resources/js/bootbox.js"></script>
+<script src="/gotrip/resources/js/arquivo.js"></script>
+<script src="/gotrip/resources/js/jquery.mask.min.js"></script>
+<script src="/gotrip/resources/js/dataformatada.js"></script>
+<script src="/gotrip/private/excursao/js/excursaoRest.js"></script>
+<script src="/gotrip/private/excursao/js/excursao.js"></script>
+<script src="/gotrip/resources/js/validacampos.js"></script>
+</head>
+
+<body>
+	<div id="main" class="container-fluid">
+		<div class="container fluid col-sm-12 cabeca">
+			<div class="col-sm-6">
+				<img alt="Brand" class="logo" src="/gotrip/resources/imagem/logo_gotrip.png">
+			</div>
+			<div class="col-sm-6">
+				<h1 id="titulo">Relatório Geral</h1>
+			</div>
+		</div>
+		<!-- /#top -->
+
+		<div id="top" class="row">
+			<div class="col-md-6">
+				<div id="navbar" class="navbar-collapse collapse">
+					<p class="informa">Excursões Cadastradas X Escursões
+						Realizadas</p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div id="navbar" class="navbar-collapse collapse">
+					<p class="informa">***Últimos 12 Meses***</p>
+				</div>
+			</div>
+			<div id="list" class="row">
+
+				<div class="table-responsive col-md-12 lista">
+					<table class="table table-striped" cellspacing="0" cellpadding="0">
+						<thead>
+							<tr>
+								<th>Cadastradas</th>
+								<th>Realizadas</th>
+								<th>Sucesso</th>
+								<th>Perda</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>400</td>
+								<td>250</td>
+								<td>62%</td>
+								<td>48%</td>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-12">
+					<div class="progress">
+						<div class="progress-bar progress-bar-warning" role="progressbar"
+							aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+							style="width: 100%">Excurções Cadastradas</div>
+					</div>
+
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" role="progressbar"
+							aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+							style="width: 62%">62% Excursões Realizadas</div>
+					</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar-danger" role="progressbar"
+							aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+							style="width: 48%">48% Perda</div>
+					</div>
+				</div>
+			</div>
+			<!-- /#list -->
+			<div class="form-group col-md-2">
+				<div clas="botoes" style="margin-top: 50px;">
+					<button id="bt3" type="submit" class="btn btn-default">Voltar</button>
+					<button id="bt4" type="submit" class="btn btn-primary">Imprimir</button>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- /#main -->
+</body>
+</html>

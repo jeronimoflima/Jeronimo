@@ -74,7 +74,11 @@ public class JDBCExcursaoDAO implements ExcursaoDAO {
 			comando += " and e.id_usuario = " + id;
 		
 		if (!nome.equals("null") && !nome.equals("")) 
-			comando += " and nome like'" + nome + "%'";
+			comando += " and nome like'" + nome + "%'"+
+					" or categoria like'" + nome+ "%'";
+		
+		
+			
 		else
 			comando += " group by p.id_excursao ";
 	

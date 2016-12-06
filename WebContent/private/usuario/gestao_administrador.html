@@ -6,6 +6,7 @@
 <link href="/gotrip/resources/css/bootstrap.css" rel="stylesheet">
 <link href="/gotrip/resources/css/cadastros.css" rel="stylesheet">
 <link href="/gotrip/resources/css/lista.css" rel="stylesheet">
+<link href="/gotrip/resources/css/index.css" rel="stylesheet">
 <!-- Chamadas JS -->
 <script src="/gotrip/resources/js/jquery-2.1.4.js"></script>
 <script src="/gotrip/resources/js/jquery-ui.js"></script>
@@ -39,7 +40,7 @@
 							class="glyphicon glyphicon-user" aria-hidden="true" ></span>
 					</a></li>
 					<li id="gerar"><a type="button" class="opcoes" href="#"
-						data-toggle="modal" data-target="#myModal">Relatório Geral <span
+						onclick="carregar('/gotrip/private/excursao/relatorio_geral.html')">Relatório Geral <span
 							class="glyphicon glyphicon-file" aria-hidden="true"></span></a></li>
 							<li><a class="opcoes" href="../../LogoutServlet">Sair <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
 					</a></li>

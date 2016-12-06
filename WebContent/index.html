@@ -56,7 +56,7 @@
 												<label class="sr-only" for="exampleInputEmail2">Email
 													address</label> <input type="email" class="form-control"
 													name="email" id="email" placeholder="Email address"
-													required>
+													required >
 											</div>
 											<div class="form-group">
 												<label class="sr-only" for="exampleInputPassword2">Password</label>
@@ -95,7 +95,7 @@
 			<div id="imaginary_container">
 				<div class="input-group stylish-input-group " style="margin-top: 8px;">
 					<input id="consultarExcursao" type="text" class="form-control"
-						placeholder="Buscar Passeio"> <span
+						placeholder="Digite o nome ou categoria da excursão"> <span
 						class="input-group-addon">
 						<button id="go_busca" type="submit" onClick="GOTRIP.excursao.buscar2()">
 							<span class="glyphicon glyphicon-search"></span>
@@ -109,13 +109,12 @@
 
 
 		<div id="mostra_lista" class="container-fluid">
-			<div class="row-fluid col-sm-12 amostra">
-				<a id="amostra1" href="#">Recem Cadastradas</a> <a id="amostra2"
-					href="#">Top Buscas</a>
+			<div class="row-fluid col-sm-12">
+				<p id ="amostra1">Já achou sua excurão? Agora GoTRip!!!</p>
 			</div>
 		</div>
 		<div id="list" class="row">
-					<div class="table-responsive col-md-12 lista">
+					<div class="table-responsive col-md-8 col-md-offset-2 lista">
 						<table class="table table-hover">
 							<thead>
 								<tr>
@@ -123,7 +122,8 @@
 									<th>Nome da Excursão</th>
 									<th>Categoria</th>
 									<th>Data</th>
-									<th>Nº Participantes</th>
+									<th>Inscritos</th>
+									<th>R$</th>
 								</tr>
 							</thead>
 							<tbody id="contentExcur">
@@ -145,8 +145,8 @@
 				<div class="navbar navbar-inverse navbar-fixed-bottom">
 					<div class="navbar-collapse collapse" id="footer-body">
 						<ul class="nav navbar-nav">
-							<li><a id="quem" href="#">Que Somos</a></li>
-							<li><a id="termos" href="#">Termos</a></li>
+							<li><a id="quem" href="/gotrip/public/Quem_somos.html">Quem Somos</a></li>
+							<li><a id="termos" href="/gotrip/public/termos.html">Termos</a></li>
 							<li><a href="#" data-toggle="popover" title="GoTRip"
 								data-html="true" data-placement="top"
 								data-content="

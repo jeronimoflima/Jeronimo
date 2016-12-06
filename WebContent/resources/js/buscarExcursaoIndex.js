@@ -40,6 +40,9 @@ $(document).ready(function() {
 										+ "<td>"
 										+ listaDeExcursoes[i].contParticipante
 										+ "</td>"
+										+ "<td>"
+										+ listaDeExcursoes[i].valor+",00"
+										+ "</td>"
 										+ "</td>" + "</tr>";
 										
 							}
@@ -72,6 +75,7 @@ $(document).ready(function() {
 					GOTRIP.excursao.exibirExcursoes2(undefined, "");
 					
 					GOTRIP.excursao.exibirResultado2 = function(id) {
+						//$("#resultado").collapse('show');
 						
 						//$("#principal").load('/gotrip/public/resultado_busca_excursao.html');
 											
