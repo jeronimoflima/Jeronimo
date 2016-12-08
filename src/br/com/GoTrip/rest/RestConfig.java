@@ -21,6 +21,7 @@ public class RestConfig extends Application{
 		resources.add(ExcursaoRest.class);
 		resources.add(ParticipanteRest.class);
 		resources.add(UsuarioRest.class);
+		resources.add(RelatorioRest.class);
 		
 		resources.add(MultiPartFeature.class);
 		
