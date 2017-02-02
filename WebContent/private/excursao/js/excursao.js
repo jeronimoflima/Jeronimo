@@ -164,35 +164,38 @@ GOTRIP.excursao.editarExcursao = function(id) {
 	GOTRIP.excursaoRest.buscarExcursaoPeloId({
 		data : id,
 		success : function(excur) {
-			$("#nome").val(excur.nome);
-			$("#categoria").val(excur.categoria);
-			$("#cidade").val(excur.cidade.nome);
-			$("#estado").val(excur.cidade.estado);
-			$("#local").val(excur.local);
-			$("#data").val(excur.data);
-			$("#totalparti").val(excur.totalparti);
-			$("#minimoparti").val(excur.minimoparti);
-			$("#valor").val(excur.valor);
-			$("#status").val(excur.status);
-			$("#descricao").val(excur.descricao);
-			$("#foto1").val(excur.imagem1);
-			$("#foto2").val(excur.imagem2);
-			$("#id_excursao").val(excur.id);
-			$("#id_cidade").val(excur.cidade.id);
+			$("#principal").load('/gotrip/private/excursao/cadastrar_excursao.html', function(){
+				$("#nome").val(excur.nome);
+				$("#categoria").val(excur.categoria);
+				$("#cidade").val(excur.cidade.nome);
+				$("#estado").val(excur.cidade.estado);
+				$("#local").val(excur.local);
+				$("#data").val(excur.data);
+				$("#totalparti").val(excur.totalparti);
+				$("#minimoparti").val(excur.minimoparti);
+				$("#valor").val(excur.valor);
+				$("#status").val(excur.status);
+				$("#descricao").val(excur.descricao);
+				$("#foto1").attr('src', excur.imagem1);
+				$("#foto2").attr('src', excur.imagem2);
+				$("#foto1").val(excur.imagem1);
+				$("#foto2").val(excur.imagem2);
+				//$("#imagem1").val(excur.imagem1);
+				//$("#imagem2").val(excur.imagem2);
+				$("#id_excursao").val(excur.id);
+				$("#id_cidade").val(excur.cidade.id);
 
-			$("#bt1").attr("onclick",
-					"GOTRIP.excursao.exibirEdicao('" + excur.id + "')");
-			$("#titulo").text("Editar Excursão");
-			$("#bt1").text("Editar");
-
+				$("#bt1").attr("onclick",
+						"GOTRIP.excursao.exibirEdicao('" + excur.id + "')");
+				$("#titulo").text("Editar Excursão");
+				$("#bt1").text("Editar");	
+			});
 		},
 
 		error : function(err) {
 			bootbox.alert("Erro ao editar excursão: " + err.responseText);
 		}
 	});
-
-	$("#principal").load('/gotrip/private/excursao/cadastrar_excursao.html');
 
 };
 

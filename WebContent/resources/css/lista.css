@@ -1,4 +1,3 @@
- 	
 
 .cabeca{
 	border-color: #999999;
@@ -75,4 +74,14 @@ h4{
 th{
 	font-family: verdana;
 	color: #666666;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+    border-color:#FF3300;
+   
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#FF6600;
 }

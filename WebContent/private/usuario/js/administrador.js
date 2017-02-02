@@ -144,17 +144,23 @@ $(document).ready(function() {
 						GOTRIP.usuarioRest.buscarUsuarioPeloId({
 							data :{'valor1' : id, 'valor2' : "1" },
 							success : function(adm) {
-								$("#nome").val(adm.nome);
-								$("#cpf").val(adm.cpf);
-								$("#email").val(adm.email);
-								$("#telefone").val(adm.telefone);
-								//$("#senha").val(adm.senha);
-								//$("#confirmasenha").val(adm.confirmasenha);
-								$("#id").val(adm.id);
+								$("#principal").load('/gotrip/private/usuario/cadastrar_administrador.html', function(){
+
+									$("#nome").val(adm.nome);
+									$("#cpf").val(adm.cpf);
+									$("#email").val(adm.email);
+									$("#telefone").val(adm.telefone);
+									//$("#senha").val(adm.senha);
+									//$("#confirmasenha").val(adm.confirmasenha);
+									$("#id").val(adm.id);
+									
+									$("#bt1").attr("onclick", "GOTRIP.administrador.exibirEdicao('"+adm.id+"')");
+									$("#titulo").text("Editar Administrador");
+									$("#bt1").text("Editar");
+									
+								});
 								
-								$("#bt1").attr("onclick", "GOTRIP.administrador.exibirEdicao('"+adm.id+"')");
-								$("#titulo").text("Editar Administrador");
-								$("#bt1").text("Editar");
+								
 								
 							},
 							
@@ -162,7 +168,6 @@ $(document).ready(function() {
 								bootbox.alert("Erro ao editar administrador: " + err.responseText);
 							}
 					  });
-						$("#principal").load('/gotrip/private/usuario/cadastrar_administrador.html')
 						
 						
 

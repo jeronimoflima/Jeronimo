@@ -154,6 +154,7 @@ $(document).ready(function() {
 						GOTRIP.usuarioRest.buscarUsuarioPeloId({
 							data :{'valor1' : id, 'valor2' : "2" },
 							success : function(orga) {
+								$("#principal").load('/gotrip/public/cadastrar_organizador.html', function(){
 								$("#nome").val(orga.nome);
 								$("#data").val(orga.data);
 								$("#cpf").val(orga.cpf);
@@ -177,7 +178,7 @@ $(document).ready(function() {
 								$("#bt1").text("Editar");
 								$("#term").hide();
 								
-								
+								});
 								
 							},
 							
@@ -185,9 +186,6 @@ $(document).ready(function() {
 								bootbox.alert("Erro ao editar organizador: " + err.responseText);
 							}
 					  });
-						$("#principal").load('/gotrip/public/cadastrar_organizador.html')
-						
-						
 
 					};
 

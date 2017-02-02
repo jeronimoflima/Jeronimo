@@ -203,6 +203,7 @@ GOTRIP.participante = new Object();
 						GOTRIP.participanteRest.buscarParticipantePeloId({
 							data : id,
 							success : function(parti) {
+								$("#principal").load('/gotrip/private/participante/cadastrar_participantes.html',function(){
 								$("#nome").val(parti.nome);
 								$("#data").val(parti.data);
 								$("#cpf").val(parti.cpf);
@@ -227,6 +228,8 @@ GOTRIP.participante = new Object();
 								$("#titulo").text("Editar Participante");
 								$("#bt1").text("Editar");
 								
+								});
+								
 
 							},
 							
@@ -235,7 +238,7 @@ GOTRIP.participante = new Object();
 							}
 					  });
 
-						$("#principal").load('/gotrip/private/participante/cadastrar_participantes.html');
+						
 						
 												
 

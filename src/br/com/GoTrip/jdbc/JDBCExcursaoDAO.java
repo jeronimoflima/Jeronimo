@@ -68,18 +68,21 @@ public class JDBCExcursaoDAO implements ExcursaoDAO {
 		 * " and nome like'" + nome + "%'";
 		 */
 
-		String comando = "SELECT e.*, p.id_participantes, p.id_excursao, count(id_participantes) AS total FROM excursao e "
-				+ " LEFT JOIN participante_excursao p ON e.id_excursao = p.id_excursao WHERE 1=1 ";
+		String comando = "SELECT e.*, p.id_participantes, p.id_excursao, count(id_participantes) AS total, c.nome FROM excursao e "
+				+ " LEFT JOIN participante_excursao p ON e.id_excursao = p.id_excursao "
+				+ "INNER JOIN cidade c on c.id_cidade = e.id_cidade "
+				+ "WHERE 1=1 ";
 		if(id != 0)		
 			comando += " and e.id_usuario = " + id;
 		
 		if (!nome.equals("null") && !nome.equals("")) 
-			comando += " and nome like'" + nome + "%'"+
-					" or categoria like'" + nome+ "%'";
+			comando += " and e.nome like '%" + nome + "%' and e.id_usuario = " + id+
+					" or categoria like '%" + nome+ "%' and e.id_usuario = " + id+
+					" or c.nome like '%" + nome+ "%'and e.id_usuario = " + id+
+					" or c.sigla_estado like '%" + nome+ "%' and e.id_usuario = " + id;
+					
 		
 		
-			
-		else
 			comando += " group by p.id_excursao ";
 	
 
