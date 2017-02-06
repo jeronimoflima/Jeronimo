@@ -154,7 +154,7 @@ $(document).ready(function() {
 						GOTRIP.usuarioRest.buscarUsuarioPeloId({
 							data :{'valor1' : id, 'valor2' : "2" },
 							success : function(orga) {
-								$("#principal").load('/gotrip/public/cadastrar_organizador.html', function(){
+								$("#principal").load('/gotrip/private/usuario/editar_organizador.html', function(){
 								$("#nome").val(orga.nome);
 								$("#data").val(orga.data);
 								$("#cpf").val(orga.cpf);
@@ -173,8 +173,7 @@ $(document).ready(function() {
 								$("#id_endereco").val(orga.endereco.id);
 								$("#id_cidade").val(orga.endereco.cidade.id);
 								
-								$("#bt1").attr("onclick", "GOTRIP.organizador.exibirEdicao('"+orga.id+"')");
-								$("#titulo").text("Editar Organizador");
+								$("#editar_org").attr("onclick", "GOTRIP.organizador.exibirEdicao('"+orga.id+"')");
 								$("#bt1").text("Editar");
 								$("#term").hide();
 								
