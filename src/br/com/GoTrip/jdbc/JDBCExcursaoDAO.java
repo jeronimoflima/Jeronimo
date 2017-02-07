@@ -58,6 +58,13 @@ public class JDBCExcursaoDAO implements ExcursaoDAO {
 
 		return excursao;
 	}
+	
+	public String userExist(int id){ 
+		if(id != 0)
+			return " and e.id_usuario = " + id;
+		else
+			return " ";
+	}
 
 	public List<Excursao> buscarPorNome(String nome, int id)
 			throws GoTripException {
@@ -73,13 +80,13 @@ public class JDBCExcursaoDAO implements ExcursaoDAO {
 				+ "INNER JOIN cidade c on c.id_cidade = e.id_cidade "
 				+ "WHERE 1=1 ";
 		if(id != 0)		
-			comando += " and e.id_usuario = " + id;
+			comando += userExist(id);
 		
 		if (!nome.equals("null") && !nome.equals("")) 
-			comando += " and e.nome like '%" + nome + "%' and e.id_usuario = " + id+
-					" or categoria like '%" + nome+ "%' and e.id_usuario = " + id+
-					" or c.nome like '%" + nome+ "%'and e.id_usuario = " + id+
-					" or c.sigla_estado like '%" + nome+ "%' and e.id_usuario = " + id;
+			comando += " and e.nome like '%" + nome + "%' " + userExist(id)+
+					" or categoria like '%" + nome+ "%' " + userExist(id)+
+					" or c.nome like '%" + nome+ "%' " + userExist(id)+
+					" or c.sigla_estado like '%" + nome+ "%' " + userExist(id);
 					
 		
 		
