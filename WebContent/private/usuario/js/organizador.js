@@ -173,7 +173,8 @@ $(document).ready(function() {
 								$("#id_endereco").val(orga.endereco.id);
 								$("#id_cidade").val(orga.endereco.cidade.id);
 								
-								$("#editar_org").attr("onclick", "GOTRIP.organizador.exibirEdicao('"+orga.id+"')");
+								$("#bt1").attr("onclick", "GOTRIP.organizador.exibirEdicao('"+orga.id+"')");
+								$("#titulo").text("Editar Organizador");
 								$("#bt1").text("Editar");
 								$("#term").hide();
 								
@@ -232,7 +233,6 @@ $(document).ready(function() {
 						}
 					
 					GOTRIP.organizador.visualizarOrganizador = function(id) {
-						debugger;
 						GOTRIP.usuarioRest.buscarUsuarioPeloId({
 							data :{'valor1' : id, 'valor2' : "2" },
 							success : function(orga) {
